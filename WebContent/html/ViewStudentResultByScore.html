@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>HTML</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	function readCookie(name) {
+		//alert(name);
+	    var i, c, ca, nameEQ = name + "=";
+	    ca = document.cookie.split(';');
+	    for(i=0;i < ca.length;i++) {
+	        c = ca[i];
+	        while (c.charAt(0)==' ') {
+	            c = c.substring(1,c.length);
+	        }
+	        if (c.indexOf(nameEQ) == 0) {
+	            return c.substring(nameEQ.length,c.length);
+	        }
+	    }
+	    return '';
+	}
+	
+	
+	var requestObject;
+	var requestDropListDataObject;
+	function doSearchClick(){
+		var LecturerID =  readCookie("LecturerID");
+		var url = "./rest/ViewStudentResultBYScore/getsearchlist/" + LecturerID +"/";
+		var temp=document.getElementById("drlCourse").value;
+		if (temp =="All") {temp="-";}
+		url =url+temp+"/";
+		temp=document.getElementById("drlGender").value;
+		
+		if (temp =="All") {temp="-";}
+		url+=temp+"/";
+		temp=document.getElementById("drlTestID").value
+		if (temp =="") {temp="-";}
+		url+=temp;	
+		//alert(url);
+		LoadPageData(url);
+	}
+
+	function onPageLoad(){
+		
+		var LecturerID =  readCookie("LecturerID");
+		document.getElementById("lblUserName").innerHTML = readCookie("LecturerName");
+		var url = "./rest/ViewStudentResultBYScore/getsearchlist/" + LecturerID + "/-/-/-";			
+		LoadPageData(url);
+	}
+	function LoadPageData(url){		
+		//1. Prepare the input data
+		
+	  //  var LecturerID =  readCookie("LecturerID");
+	 
+		//2. obtain new object
+		if(window.XMLHttpRequest){
+			//Workable with: IE7+, Firefox, Chrome, Opera, Safari
+			requestObject = new XMLHttpRequest();
+		}
+		else{
+			//Workable with: IE5, IE6
+			requestObject = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	
+	    //3. set the callback function
+	    // the callback will be called when the result is available
+	    requestObject.onreadystatechange = processResult;
+	    
+	    //4. Specify the service which will be called   
+	    
+	    //var url = "./rest/ViewStudentResultBYScore/getsearchlist/" + LecturerID + "/" +course+"/"+gender+"/"+ testID ; 
+	    
+	    //5. Send the request to server
+	    requestObject.open("GET", url, true); //true = Working in ASYNC mode
+	    requestObject.send(null);
+	    
+	
+	}
+	
+	function processAddDropListData(objMain){	
+		var obj=objMain.Subject;
+	
+		var x=document.getElementById("drlCourse");
+	    //var option=document.createElement("option");
+		x.options.length=1;
+       	for(var i=0; i< obj.students.length; i++){
+       	
+       		var option=document.createElement("option");
+       		option.text=obj.students[i].SUBJECT_NAME;
+       		
+       		option.value=obj.students[i].SUBJECT_NAME;
+       		
+        	try{ // for IE earlier than version 8
+        	  x.add(option,x.options[null]);
+        	}
+        	catch (e){x.add(option,null);}
+       	}
+       	
+       	obj=objMain.TestID;
+       	x=document.getElementById("drlTestID");         
+       	x.options.length=1;
+       	for(var i=0; i< obj.students.length; i++){
+       	
+       		var option=document.createElement("option");
+       		option.text=obj.students[i].TEST_ID;
+       		
+       		option.value=obj.students[i].TEST_ID;
+       		
+        	try{ // for IE earlier than version 8
+        	  x.add(option,x.options[null]);
+        	}
+        	catch (e){x.add(option,null);}
+       	}
+	}
+	function processResult(){		
+		
+		if (requestObject.readyState == 4) {
+			
+	        if (requestObject.status == 200) { // 200 means "OK"
+	            //the result, we know before as text -  use requestObject.responseText
+	  	
+	        	var objMain = eval ("(" + requestObject.responseText + ")");
+	        	processAddDropListData(objMain);
+	        	var obj = objMain.GraphData;
+	        	//////Ve chart
+	        	var a=0,b=0,c=0,d=0,f=0;
+	        	for(var i=0; i< obj.students.length; i++){
+	        	
+	        		if(obj.students[i].grade=="A"){ a += parseInt(obj.students[i].Quantity);}
+	        		else if(obj.students[i].grade=="B"){ b += parseInt(obj.students[i].Quantity);}
+	        		else if(obj.students[i].grade=="C"){ c += parseInt(obj.students[i].Quantity);}
+	        		else if(obj.students[i].grade=="D"){ d += parseInt(obj.students[i].Quantity);}
+	        		else { f+= parseInt(obj.students[i].Quantity);}
+	        	}
+	        	
+				$(function () {
+				    var chart;
+				    var options ={
+				            chart: {plotBackgroundColor: null,plotBorderWidth: null,plotShadow: false},
+				            title: {text: 'Academic Grading Percentage'},
+				            tooltip: {pointFormat: '{series.name}: <b>{point.percentage}%</b>',	percentageDecimals: 1},
+				            plotOptions: {pie: {allowPointSelect: true,cursor: 'pointer',dataLabels: {enabled: false},showInLegend: true}},
+				            series: [{
+				                type: 'pie',
+				                name: 'Browser share',
+				                data: [
+				                      	{name: 'A', color: '#4795C3', y: 45.0, sliced: true, selected: true, },
+					                    {name: 'B', color: '#FFCCCC', y: 26.0,},
+				                    	{name: 'C', color: '#E9602A', y: 12.0,},
+				                    	{name: 'D', color: '#459C56', y: 20.0,},
+										{name: 'F', color: '#FF0033', y: 26.0,}
+				                ]
+				            }]
+				        };
+				    options.series[0].data[0].y=a;
+			    	options.series[0].data[1].y=b;
+			    	options.series[0].data[2].y=c;
+			    	options.series[0].data[3].y=d;
+			    	options.series[0].data[4].y=f;
+				    $(document).ready(function () {$('#container').highcharts(options);});
+			    });
+	        	 	      
+	        	
+	        } else {
+	            alert("There was a problem in the returned data-:\n"+ requestObject.status.toString());
+	        }
+	    }
+	}
+		
+</script>
+</head>
+
+<body onLoad="onPageLoad()">
+<script src="highcharts.js"></script>
+<script src="exporting.js"></script>
+<header class="header_vip">
+<ul class="menu_top">
+  <li><a href="./ViewAllStudentResult.html" title="Examination Application">Examination Application</a></li>
+  <li><a href="./ViewStudentResultByScore.html" title="View Score grade">View Score grade</a></li>
+</ul>
+<div class="clear"></div>
+<h4><img src="images/logo.jpg" width="260" height="68"  alt="logo"></h4>
+<div class="user_top">
+  <label>Hi, Dr !</label>
+  <span><a href="./ViewAllStudentResult.html" title="u"><label id="lblUserName"></label></a></span>
+  <p><a href="./Login.html" title="S">Sign Out</a></p>
+</div>
+<div class="clear"></div>
+<ul class="menu_main">
+  <li><a class="icon-home" href="#" title="Home Page">Home Page</a></li>
+  <li><a href="./ViewAllStudentResult.html" title="View All Student Result">View All Student Result</a></li>
+  <li class="active"><a href="./ViewStudentResultByScore.html" title="View Score grade">View Score grade</a></li>
+  <li><a href="./ViewScoreStats.html" title="View Score Statistics">View Score Statistics</a></li>
+</ul>
+</header>
+<section class="content_vip">
+<div class="content_page">
+  <h2>Exam Result</h2>
+  <ul>
+    <li><a href="#" title="Print"><img src="images/ico-print.png" width="29" height="28" alt="Print"></a></li>
+    <li><a href="#" title="Excel"><img src="images/ico-excel.png" width="29" height="29" alt="Excel"></a></li>
+    <li><a href="#" title="PDF"><img src="images/ico-pdf.png" width="24" height="28" alt="PDF"></a></li>
+  </ul>
+  <div class="clear"></div>
+  <div class="list_ds">
+    <div class="line_ds"></div>
+    <div class="clear"></div>
+    <p class="name_list">View Score grade </p>
+    <div class="clear"></div>
+    <div class="soft_ds">
+      <ul>
+        <li>Course</li>
+        <li><select name="" class="style_input" id="drlCourse"><option value="-">All</option></select></li>
+        <li>Gender</li>
+        <li><select name="" class="style_input" id="drlGender"><option value="-">All</option><option value="M">Male</option><option value="F">Female</option></select></li>
+        <li>Exam Code</li>
+        <li><select name="" class="style_input" id="drlTestID"><option value="-">All</option></select></li>
+        <li><div class="ico_search_ds" onclick="doSearchClick()">Search</div></li>
+      </ul>
+      <div class="clear"></div>
+    </div>    
+    <div id="container"  class="chart_show style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<div class="clear"></div>
+</section>
+<footer class="footer_vip"> </footer>
+</body>
+</html>

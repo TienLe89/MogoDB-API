@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>HTML</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+
+
+
+function readCookie(name) {
+	//alert(name);
+    var i, c, ca, nameEQ = name + "=";
+    ca = document.cookie.split(';');
+    for(i=0;i < ca.length;i++) {
+        c = ca[i];
+        while (c.charAt(0)==' ') {
+            c = c.substring(1,c.length);
+        }
+        if (c.indexOf(nameEQ) == 0) {
+            return c.substring(nameEQ.length,c.length);
+        }
+    }
+    return '';
+}
+
+
+var requestObject;
+
+function doSearchClick(){
+	var LecturerID =  readCookie("LecturerID");
+	var url = "./rest/ViewScoreStats/getsearchlist/" + LecturerID +"/";
+	var temp=document.getElementById("drlCourse").value;
+	if (temp =="All") {temp="-";}
+	url =url+temp+"/";
+	temp=document.getElementById("drlGender").value;
+	
+	if (temp =="All") {temp="-";}
+	url+=temp+"/";
+	temp=document.getElementById("drlTestID").value
+	if (temp =="") {temp="-";}
+	url+=temp;	
+	//alert(url);
+	LoadPageData(url);
+}
+
+function onPageLoad(){
+	
+	var LecturerID =  readCookie("LecturerID");
+	 document.getElementById("lblUserName").innerHTML = readCookie("LecturerName");
+	var url = "./rest/ViewScoreStats/getsearchlist/" + LecturerID + "/-/-/-";			
+	LoadPageData(url);
+}
+function LoadPageData(url){		
+	//1. Prepare the input data
+	//alert(url);
+  //  var LecturerID =  readCookie("LecturerID");
+ 
+	//2. obtain new object
+	if(window.XMLHttpRequest){
+		//Workable with: IE7+, Firefox, Chrome, Opera, Safari
+		requestObject = new XMLHttpRequest();
+	}
+	else{
+		//Workable with: IE5, IE6
+		requestObject = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+
+    //3. set the callback function
+    // the callback will be called when the result is available
+    requestObject.onreadystatechange = processResult;
+    
+    //4. Specify the service which will be called   
+    
+    //var url = "./rest/ViewStudentResultBYScore/getsearchlist/" + LecturerID + "/" +course+"/"+gender+"/"+ testID ; 
+    
+    //5. Send the request to server
+    requestObject.open("GET", url, true); //true = Working in ASYNC mode
+    requestObject.send(null);
+    
+
+}
+
+function processAddDropListData(objMain){	
+	var obj=objMain.Subject;
+
+	var x=document.getElementById("drlCourse");
+    //var option=document.createElement("option");
+	x.options.length=1;
+   	for(var i=0; i< obj.students.length; i++){
+   	
+   		var option=document.createElement("option");
+   		option.text=obj.students[i].SUBJECT_NAME;
+   		
+   		option.value=obj.students[i].SUBJECT_NAME;
+   		
+    	try{ // for IE earlier than version 8
+    	  x.add(option,x.options[null]);
+    	}
+    	catch (e){x.add(option,null);}
+   	}
+   	
+   	obj=objMain.TestID;
+   	x=document.getElementById("drlTestID");         
+   	x.options.length=1;
+   	for(var i=0; i< obj.students.length; i++){
+   	
+   		var option=document.createElement("option");
+   		option.text=obj.students[i].TEST_ID;
+   		
+   		option.value=obj.students[i].TEST_ID;
+   		
+    	try{ // for IE earlier than version 8
+    	  x.add(option,x.options[null]);
+    	}
+    	catch (e){x.add(option,null);}
+   	}
+}
+function processResult(){		
+	
+	if (requestObject.readyState == 4) {
+		
+        if (requestObject.status == 200) { // 200 means "OK"
+            //the result, we know before as text -  use requestObject.responseText
+  	
+        	var objMain = eval ("(" + requestObject.responseText + ")");
+        	processAddDropListData(objMain);
+        	var obj =objMain.General;	
+	       	document.getElementById("lblNumStudentPassed").innerHTML = obj.NoStudentPassed;
+        	document.getElementById("lblNumStudentFailed").innerHTML = obj.NoStudentFailed;
+        	document.getElementById("lblMaxScore").innerHTML = obj.MaxScore;
+        	document.getElementById("lblMinScore").innerHTML = obj.MinScore;
+        	
+        	obj = objMain.GraphData;
+        	//////Ve chart
+        	
+        	var chart;
+  		    var options ={ chart: { type: 'column' },
+  			    	title: { text: '' }, xAxis: { categories: [] }, yAxis: { min: 0, title: {
+  			    	                       			    	text: 'Number of Student passed' } }, legend: { backgroundColor:
+  			    	                       			    	'#FFFFFF', reversed: true }, plotOptions: { series: { stacking: 'normal'
+  			    	                       			    	} }, series: [{ name: 'Male',color: '#00FF00', data: [] }, { name: 'Female',
+  			    	                       			    	data: [] }] };
+        	for(var i=0; i< obj.students.length; i++){
+        		options.series[0].data.push(parseInt(obj.students[i].NoMalePass));
+        		options.series[1].data.push(parseInt(obj.students[i].NoFemalePass));        
+        		options.xAxis.categories.push(obj.students[i].SUBJECT_NAME);
+        		
+        	}       	
+		    $(document).ready(function () {$('#container').highcharts(options);});
+			    
+			  
+		  
+        	 	      
+        	
+        } else {
+            alert("There was a problem in the returned data-:\n"+ requestObject.status.toString());
+        }
+    }
+}
+
+</script>
+</head>
+
+<body onLoad="onPageLoad()">
+	<script src="highcharts.js"></script>
+	<script src="exporting.js"></script>
+	
+	<header class="header_vip">
+		<ul class="menu_top">
+			<li><a href="./ViewAllStudentResult.html" title="Examination Application">Examination
+					Application</a></li>
+			<li><a href="./ViewScoreStats.html" title="View Score Stats">View Score Stats</a></li>
+		</ul>
+		<div class="clear"></div>
+		<h4><img src="images/logo.jpg" width="260" height="68"  alt="logo"></h4>
+		<div class="user_top">
+  	<label>Hi, Dr !</label>
+  	<span><a href="./ViewAllStudentResult.html" title="u"><label id="lblUserName"></label></a></span>
+ 	 <p><a href="./Login.html" title="S">Sign Out</a></p>
+	</div>
+		<div class="clear"></div>
+		<ul class="menu_main">
+			<li><a class="icon-home" href="#" title="Home Page">Home
+					Page</a></li>
+			<li><a href="./ViewAllStudentResult.html" title="View All Student Result">View All
+					Student Result</a></li>
+			<li><a href="./ViewStudentResultByScore.html" title="View Score grade">View
+					Score grade</a></li>
+			<li class="active"><a href="#" title="View Score Statistics">View Score
+					Statistics</a></li>
+		</ul>
+	</header>
+	<section class="content_vip">
+		<div class="content_page">
+			<h2>Exam Result</h2>
+			<ul>
+				<li><a href="#" title="Print"><img
+						src="images/ico-print.png" width="29" height="28" alt="Print"></a></li>
+				<li><a href="#" title="Excel"><img
+						src="images/ico-excel.png" width="29" height="29" alt="Excel"></a></li>
+				<li><a href="#" title="PDF"><img src="images/ico-pdf.png"
+						width="24" height="28" alt="PDF"></a></li>
+			</ul>
+			<div class="clear"></div>
+			<div class="list_ds">
+				<div class="line_ds"></div>
+				<div class="clear"></div>
+				<p class="name_list">View Score Stats</p>
+				<div class="clear"></div>
+				<div class="soft_ds">
+					<ul>
+						 <li>Course</li>
+				        <li><select name="" class="style_input" id="drlCourse"><option value="-">All</option></select></li>
+				        <li>Gender</li>
+				        <li><select name="" class="style_input" id="drlGender"><option value="-">All</option><option value="M">Male</option><option value="F">Female</option></select></li>
+				        <li>Exam Code</li>
+				        <li><select name="" class="style_input" id="drlTestID"><option value="-">All</option></select></li>
+				        <li><div class="ico_search_ds" onclick="doSearchClick()">Search</div></li>
+					</ul>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+				<div class="chart_show1">
+					<table width="100%" border="0" cellspacing="1" cellpadding="1">
+						<tr>
+							<td>Stats</td>
+							<td>Student Name</td>						
+						</tr>
+						<tr class="white">
+							<td align="left">Max Score</td>
+							<td align="center"><a href="#"><label id="lblMaxScore"></label></a></td>
+						
+						</tr>
+						<tr class="greg">
+							<td align="left">Min Score</td>
+							<td align="center"><a href="#"><label id="lblMinScore"></label></a></td>
+							
+						</tr>
+						<tr class="white">
+							<td align="left">No. student passed</td>
+							<td align="center"><a href="#"><label id="lblNumStudentPassed"></label></a></td>
+							
+						</tr>
+						<tr class="greg">
+							<td align="left">No. student failed</td>
+							<td align="center"><a href="#"><label id="lblNumStudentFailed"></label></a></td>
+						
+						</tr>
+					</table>
+					<div class="clear"></div>
+				</div>
+				
+			<!-- <div class="chart_show2">
+					<img src="images/img-chart.jpg" alt="" width="435" height="393" /> -->
+					
+					
+	<div id="container" class="chart_show2 style="width: 400px; height: 400px; margin: 0 auto"></div>
+					
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</section>
+	<footer class="footer_vip"> </footer>
+</body>
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>HTML</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="css/main.css">
+
+<script type="text/javascript" src="jquery.js"></script>
+
+	<script>
+	//page 4
+	function get_url_parameter(name){
+		name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+		  var regexS = "[\\?&]"+name+"=([^&#]*)";
+		  var regex = new RegExp( regexS );
+		  var results = regex.exec( window.location.href );
+		  if( results == null )
+		    return "";
+		  else
+		    return results[1];
+	}
+
+	function readCookie(name) {
+		//alert(name);
+	    var i, c, ca, nameEQ = name + "=";
+	    ca = document.cookie.split(';');
+	    for(i=0;i < ca.length;i++) {
+	        c = ca[i];
+	        while (c.charAt(0)==' ') {
+	            c = c.substring(1,c.length);
+	        }
+	        if (c.indexOf(nameEQ) == 0) {
+	            return c.substring(nameEQ.length,c.length);
+	        }
+	    }
+	    return '';
+	}
+	var requestObject;
+	
+	function onPageLoad(){		
+		//1. Prepare the input data
+		
+	    var studentID =  readCookie("StudentID");
+	    document.getElementById("lblUserName").innerHTML = readCookie("StudentName");
+	    var testID =get_url_parameter("TestID"); 
+	    
+		//2. obtain new object
+		if(window.XMLHttpRequest){
+			//Workable with: IE7+, Firefox, Chrome, Opera, Safari
+			requestObject = new XMLHttpRequest();
+		}
+		else{
+			//Workable with: IE5, IE6
+			requestObject = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	
+	    //3. set the callback function
+	    // the callback will be called when the result is available
+	    requestObject.onreadystatechange = processResult;
+	    
+	    //4. Specify the service which will be called   
+	    
+	  
+	    var url = "./rest/StudentExamResultDetail/getexamresult/" + studentID + "/" + testID ;
+	  //alert(url);
+	    
+	    //5. Send the request to server
+	    requestObject.open("GET", url, true); //true = Working in ASYNC mode
+	    requestObject.send(null);
+ 
+	}
+	function convertToHTMLVisibleNewline(value) {
+	    if (value != null && value != "") {
+	    	value=value.replace(/\n/g, "<br/>");
+	        return value.replace(/\r/g, "");
+	    } else {
+	        return value;
+	    }
+	}
+	function processResult(){		
+		if (requestObject.readyState == 4) {
+	        if (requestObject.status == 200) { // 200 means "OK"
+	            //the result, we know before as text -  use requestObject.responseText
+	        	
+	            
+	        	var objMain = eval ("(" + convertToHTMLVisibleNewline(requestObject.responseText) + ")");
+	        	
+	        	
+	        	var obj = objMain.General;
+	        	///// xu ly thong tin chung
+		       	document.getElementById("lblStudentName").innerHTML = obj.STUDENT_NAME;
+	        	document.getElementById("lblSubjectName").innerHTML = obj.SUBJECT_NAME;
+	        	document.getElementById("lblTestDate").innerHTML = obj.T_TEST_DATE;
+	        	document.getElementById("lblTestTime").innerHTML = obj.T_START_TIME;
+	        	document.getElementById("lblDuration").innerHTML = obj.TEST_DURATION;
+	        	
+	        	document.getElementById("lblRequiredScore").innerHTML = obj.TEST_REQUIRED_SCORE;
+	        	document.getElementById("lblTestScore").innerHTML = obj.TEST_SCORE;
+	        	if(obj.IS_PASS==1){
+	        		document.getElementById("lblIsPass").innerHTML = "Passed";	 
+	        	}
+	        	else{ document.getElementById("lblIsPass").innerHTML="Failed";
+	        	
+	        	
+	        	}
+	        	
+	        	//////Ve chart
+	        	var options = {
+			            chart: {type: 'column'},
+			            title: {text: 'Score chart'},
+			            xAxis: {categories: ['Your Score', 'Require Score']},
+			            yAxis: {min: 0, title: {text: 'Score Chart'}},
+			            legend: {backgroundColor: '#FFFFFF', reversed: true},
+			            plotOptions: {
+			                series: {stacking: 'normal'}
+			            },
+			            series: [{
+			                name: 'Your Score',
+			                color: '#FF0033'               
+			            }, ]
+			        };
+	        	
+	        	options.series[0].data = new Array(parseInt(obj.TEST_SCORE), parseInt(obj.TEST_REQUIRED_SCORE));
+	  
+	        	$(function () {
+			        $('#container').highcharts(options);
+			    });
+	        	/////Section
+	        	obj=objMain.Section;
+	        	var innerText = "<table width='100%' border='0' cellspacing='1' cellpadding='1'>"+
+	        	"<tr><td>No</td><td>Section</td><td>Items</td><td>Percent Correct</td></tr>";
+	        	
+	        	for(var i=0; i< obj.students.length; i++){
+	        		        	
+	        		if(i%2==0) {innerText += "<tr class='white'>";}
+	        		else {innerText += "<tr class='greg'>";}
+	        		innerText += "<td align='center'>" + (i+1) + "</td>";
+        			innerText += "<td align='center'>" + obj.students[i].TESTSEC_NAME + "</td>";
+        			innerText += "<td align='center'>" + obj.students[i].NumberItemOfSection + "</td>";
+        			innerText += "<td align='center'>" + obj.students[i].Percent + "</td>";        			        		
+	        		innerText += "</TR>";
+	        	}	 	       
+	        	innerText += "</TABLE>";
+				
+	        	document.getElementById("listSection").innerHTML = innerText;
+	        /////Question
+	        	obj=objMain.Question;
+	        	var innerText = "<table width='100%' border='0' cellspacing='1' cellpadding='1'>"+
+	        	"<tr><td>No</td><td>Question Text</td><td>Question Type</td><td>Option</td><td>USer Response</td><td>Correct Answer</td><td>Item Score</td></tr>";
+	        	
+	        	for(var i=0; i< obj.students.length; i++){
+	        		        	
+	        		if(i%2==0) {innerText += "<tr class='white'>";}
+	        		else {innerText += "<tr class='greg'>";}
+	        		innerText += "<td align='center'>" + (i+1) + "</td>";
+        			innerText += "<td align='left'>" + obj.students[i].QUESTION_DESC+ "</td>";
+        			innerText += "<td align='center'>" + obj.students[i].QUESTION_TYPE + "</td>";
+        			innerText += "<td align='center'>" + obj.students[i].aswoption + "</td>";        			        		
+        			innerText += "<td align='center'>" + obj.students[i].answer_desc + "</td>";        			        		
+        			innerText += "<td align='left'>" + obj.students[i].CorectAnswer + "</td>";        			        		
+        			innerText += "<td align='center'>" + obj.students[i].answer_score + "</td>";        			        		
+	        		        			        		
+	        		innerText += "</TR>";
+	        	}	 	       
+	        	innerText += "</TABLE>";
+				
+	        	document.getElementById("listQuestion").innerHTML = innerText;
+	        	
+	        } else {
+	            alert("There was a problem in the returned data-:\n"+ requestObject.status.toString());
+	        }
+	    }
+	}
+</script>
+</head>
+
+<body onLoad="onPageLoad()">
+
+<script src="highcharts.js"></script>
+	<script src="exporting.js"></script>
+	
+	<header class="header_vip">
+		<ul class="menu_top">
+			<li><a href="#" title="Examination Application">Examination
+					Application</a></li>
+			<li><a href="#" title="Exam Result">Exam Result</a></li>
+		</ul>
+		<div class="clear"></div>
+<h4><img src="images/logo.jpg" width="260" height="68"  alt="logo"></h4>
+<div class="user_top">
+  <label>Hi !</label>
+  <span><a href="./PersonalStas.html" title="u"><label id="lblUserName"></label></a></span>
+  <p><a href="./Login.html" title="S">Sign Out</a></p>
+</div>v>
+<div class="clear"></div>
+		<ul class="menu_main">
+			<li><a class="icon-home" href="#" title="Home Page">Home
+					Page</a></li>
+			<li><a href="./PersonalStas.html" title="Personal Stats">Personal Stats</a></li>
+			<li class="active"><a href="#" title="Exam Result">Exam
+					Result</a></li>
+		</ul>
+	</header>
+	<section class="content_vip">
+		<div class="content_page">
+			<h2>Exam Detail Result</h2>
+			<ul>
+				<li><a href="#" title="Print"><img
+						src="images/ico-print.png" width="29" height="28" alt="Print"></a></li>
+				<li><a href="#" title="Excel"><img
+						src="images/ico-excel.png" width="29" height="29" alt="Excel"></a></li>
+				<li><a href="#" title="PDF"><img src="images/ico-pdf.png"
+						width="24" height="28" alt="PDF"></a></li>
+			</ul>
+			<div class="clear"></div>
+		
+			
+			<div class="content_left" style="line-height:25px;">
+				<h3>Exam Information</h3>
+				<ul>
+					<li>Candidate Name: <label style="color: #00FF00" id="lblStudentName"></label>
+					</li>
+					<li>Subject Name : <label id="lblSubjectName"></label>
+					</li>
+					<li>Test Date : <label style="color: #3300CC" id="lblTestDate"></label>
+					</li>
+					<li>Test Time : <label style="color: #3300CC" id="lblTestTime"></label>
+					</li>
+					<li>Elapsed Time (minutes) : <label style="color: #3300CC" id="lblDuration"></label>
+					</li>
+					<li>Passed Score : <label style="color: #FFCC66" id="lblRequiredScore"></label>
+					</li>
+					<li>Your Score : <label style="color: #00FF00" id="lblTestScore"></label>
+					</li>
+					<li>Grade: <label style="color: #FF0000" id="lblIsPass"></label>
+					</li>
+				</ul>
+			</div>
+			
+			<div id="container"	style="width: 550px; height: 400px; margin: 0 auto; float:left;"></div>
+				<div class="list_show" id="listSection">
+				<table width="100%" border="0" cellspacing="1" cellpadding="1">
+					<tr>
+						<td>No</td>
+						<td>Section</td>
+						<td>Items</td>
+						<td>Percent Correct</td>
+
+					</tr>
+					<tr class="white">
+						<td align="center">1</td>
+						<td align="left">Deploying windows 7</td>
+						<td>4</td>
+						<td>15%</td>
+					</tr>
+
+					<tr class="greg">
+						<td align="center">2</td>
+						<td align="left">Configure hardware and applications</td>
+						<td>3</td>
+						<td>95%</td>
+					</tr>
+					<tr class="white">
+						<td align="center">3</td>
+						<td align="left">Access to resource</td>
+						<td>3</td>
+						<td>70%</td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<tr class="white">
+					<td align="center"></td>
+			</div>
+			<div class="list_show" id="listQuestion">
+				<table width="100%" border="0" cellspacing="1" cellpadding="1">
+					<tr>
+						<td>No</td>
+						<td>Question Text</td>
+						<td>Question Type</td>
+						<td>Option</td>
+						<td>USer Response</td>
+						<td>Correct Answer</td>
+						<td>Item Score</td>
+					</tr>
+					<tr class="white">
+						<td align="center">1</td>
+						<td align="left">Samples of Teacher Philosophies of Education
+							?</td>
+						<td>Writing</td>
+						<td>NA</td>
+						<td align="left">Play game, BrainStorming, tell a story, lean
+							by example</td>
+						<td align="left">Play game, BrainStorming, tell a story, lean
+							by example</td>
+						<td align="center">10</td>
+
+					</tr>
+					<tr class="greg">
+						<td align="center">2</td>
+						<td align="left">Why is Education Important?</td>
+						<td>Writing</td>
+						<td>NA</td>
+						<td align="center">N/A</td>
+						<td align="center">Education is the resource of one country</td>
+						<td align="center">10</td>
+
+					</tr>
+					<tr class="white">
+						<td align="center">3</td>
+						<td align="left">You have an offline virtual hard disk (VHD)
+							that contains an installation of Windows 7 Home Premium. You need
+							to upgrade the installation to Windows 7 Ultimate by using the
+							minimum amount of administrative effort. What should you do?</td>
+						<td>Multiple choice</td>
+						<td><ul>
+								<li>A.From a computer that runs Windows 7, attach the VHD.
+									Run Imagex.exe and specify the /apply parameter.</li>
+								<li>B. From a computer that runs Windows 7, attach the VHD.
+									Run Dism.exe and specify the /set-edition parameter.</li>
+								<li>C.Deploy the VHD to a new computer and upgrade the
+									computer to Windows 7 Ultimate. Run Dism.exe and specify the
+									/image parameter.</li>
+								<li>D.Deploy the VHD to a new computer and upgrade the
+									computer to Windows 7 Ultimate. Run Imagex.exe and specify the
+									/capture parameter.</li>
+							</ul></td>
+						<td align="left">Deploy the VHD to a new computer and upgrade
+							the computer to Windows 7 Ultimate. Run Imagex.exe and specify
+							the /capture parameter</td>
+						<td align="left">From a computer that runs Windows 7, attach
+							the VHD. Run Dism.exe and specify the /set-edition parametery</td>
+						<td align="center">20</td>
+
+					</tr>
+					<tr class="greg">
+						<td align="center">4</td>
+						<td align="left">You need to increase the size of a paging
+							file. What should you do?</td>
+						<td>Multiple choice</td>
+						<td align="left"><ul>
+								<li >A.From Disk Management, shrink the boot partition.</li>
+								<li>B. From Disk Management, shrink the system partition.r.</li>
+								<li>C.From System, modify the Advanced system settings.</li>
+								<li>D.From System, modify the System protection settings.</li>
+							</ul></td>
+						<td align="center">A</td>
+						<td align="center">A</td>
+						<td align="center">10</td>
+
+					</tr>
+					<tr class="white">
+						<td align="center">5</td>
+						<td align="left">You have a computer that runs Windows 7. The
+							computer's disk is configured as shown in the exhibit. You need
+							to extend volume C. What should you do first?</td>
+						<td>Multiple choice</td>
+						<td align="left"><ul>
+								<li>A.Back up and delete volume D..</li>
+								<li>B. Convert disk 0 to a dynamic disk..</li>
+								<li>C.Remove the crash dump from volume C..</li>
+								<li>D.Move the paging file from volume C to volume E.</li>
+							</ul></td>
+						<td align="center">A</td>
+						<td align="center">C</td>
+						<td align="center">10</td>
+
+					</tr>
+					<tr class="greg">
+						<td align="center">6</td>
+						<td align="left">You have a computer that runs Windows 7. You
+							configure the computer to automatically install all updates. You
+							need to verify whether a specific update is installed. What
+							should you do?</td>
+						<td>Multiple choice</td>
+						<td align="left"><ul>
+								<li>A.In event viewer, examine the application log.</li>
+								<li>B.In windows update, examine the update history.</li>
+								<li>C.At the command prompt, run Wusa.exe and specify the
+									/kb parameter.</li>
+								<li>D.At the command prompt, run Verifier.exe and specify
+									the /query parameter.</li>
+							</ul></td>
+						<td align="center">D</td>
+						<td align="center">C</td>
+						<td align="center">10</td>
+
+					</tr>
+					<tr class="white">
+						<td align="center">7</td>
+						<td align="left">You have a computer that runs Windows 7. You
+							need to identify the disk, memory, CPU, and network resources
+							that an application is currently using. Which tool should you
+							use?</td>
+						<td>Multiple choice</td>
+						<td align="left"><ul>
+								<li>A.Component Services.</li>
+								<li>B.Performance Information and Tools.</li>
+								<li>C.Reliability Monitor.</li>
+								<li>D.Resource Monitor.</li>
+							</ul></td>
+						<td align="center">A</td>
+						<td align="center">C</td>
+						<td align="center">10</td>
+
+					</tr>
+					<tr class="greg">
+						<td align="center">8</td>
+						<td align="left">You have a computer that runs Windows 7. You
+							need to capture the operating system and all the computer
+							configurations to a Windows image (WIM) file. What should you do
+							before you capture the image?</td>
+						<td>Multiple Choice</td>
+						<td align="left"><ul>
+								<li>A.Regedit.exe.</li>
+								<li>C.explorer.exe.</li>
+								<li>B.Dism.exe.</li>
+								<li>D.Oscdimg.exe.</li>
+							</ul></td>
+						<td align="center">B</td>
+						<td align="center">C</td>
+						<td align="center">5</td>
+
+
+					</tr>
+					<tr class="white">
+						<td align="center">9</td>
+						<td align="left">Your company uses Windows Deployment
+							Services (WDS) to deploy Windows 7. You create a new image of
+							Windows 7. You need to ensure that you can deploy the image by
+							using WDS. What should you do?</td>
+						<td>Multiple Choice</td>
+						<td align="left"><ul>
+								<li>A.Regedit.exe.</li>
+								<li>B.Dism.exe.</li>
+								<li>C.explorer.exe.</li>
+								<li>D.Oscdimg.exe.</li>
+							</ul></td>
+						<td align="center">B</td>
+						<td align="center">B</td>
+						<td align="center">20</td>
+
+
+					</tr>
+					<tr class="greg">
+						<td align="center">10</td>
+						<td align="left">You plan to capture a Windows 7 image by
+							using the Windows Preinstallation Environment (Windows PE). You
+							need to ensure that Windows PE supports the Windows Scripting
+							Host (WSH). Which tool should you use?</td>
+						<td>Multiple Choice</td>
+						<td align="left"><ul>
+								<li style="allign: left">A.Bcdedit.exe.</li>
+								<li>B.Dism.exe.</li>
+								<li>C.Imagex.exe.</li>
+								<li>D.Oscdimg.exe.</li>
+							</ul></td>
+						<td align="center">A</td>
+						<td align="center">B</td>
+						<td align="center">5</td>
+
+					</tr>
+				</table>
+				<div class="clear"></div>
+				<div class="phan_trang">
+					<p class="floatR">
+						<img class="btn_go floatR" src="images/ico-go.png" alt=""
+							width="20" height="20" /> <input class="style_input2 floatR"
+							name="" type="text" />
+					</p>
+					<ul class="phantrang_bottom">
+						<li><a title="" href="#">&gt; Next</a></li>
+						<li><a title="" href="#">5</a></li>
+						<li><a title="" href="#">4</a></li>
+						<li class="active">3</li>
+						<li><a title="" href="#">2</a></li>
+						<li><a title="" href="#">1</a></li>
+						<li><a title="" href="#">Prev &lt;</a></li>
+					</ul>
+					<div>[1–9 of 90]</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="clear"></div>
+	</section>
+	<footer class="footer_vip"> </footer>
+</body>
+</html>

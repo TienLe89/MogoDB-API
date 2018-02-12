@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="3015,4083" id="classDefination" metadata="uml2-1.0" initialized="true" scrolledX="739" scrolledY="1721" tag="10" key="32303037303533312D3130204578616D696E6174696F6E53797374656D">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.10/@sourceConnections.0" name="Student" location="2833,50" size="162,409" id="classDefination/Student" runTimeClassModel="getStudentMobile(),studentEmail,removeTestProcess(LclassDefination.TestProcess;),getTestProcess(),studentMobile,noPendingCourse,noPassCourse,studentAddress,noFailCourse,getIteratorTestProcess(),getStudentName(),studentId,removeAllTestProcess(),studentName,Student(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getStudentAddress(),studentGender,addTestProcess(LclassDefination.TestProcess;),getStudentID(),setTestProcess(Ljava.util.Collection;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="131,162">
+      <children xsi:type="editmodel:AttributeEditModel" name="noFailCourse" id="classDefination/Student#noFailCourse"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="noPassCourse" id="classDefination/Student#noPassCourse"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="noPendingCourse" id="classDefination/Student#noPendingCourse"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="studentAddress" id="classDefination/Student#studentAddress"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="studentEmail" id="classDefination/Student#studentEmail"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="studentGender" id="classDefination/Student#studentGender"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="studentId" id="classDefination/Student#studentId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="studentMobile" id="classDefination/Student#studentMobile"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="studentName" id="classDefination/Student#studentName"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="139,198">
+      <children xsi:type="editmodel:MethodEditModel" name="Student" id="classDefination/Student#Student(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addTestProcess" id="classDefination/Student#addTestProcess(LclassDefination.TestProcess;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIteratorTestProcess" id="classDefination/Student#getIteratorTestProcess()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getStudentAddress" id="classDefination/Student#getStudentAddress()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getStudentID" id="classDefination/Student#getStudentID()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getStudentMobile" id="classDefination/Student#getStudentMobile()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getStudentName" id="classDefination/Student#getStudentName()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTestProcess" id="classDefination/Student#getTestProcess()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAllTestProcess" id="classDefination/Student#removeAllTestProcess()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeTestProcess" id="classDefination/Student#removeTestProcess(LclassDefination.TestProcess;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setTestProcess" id="classDefination/Student#setTestProcess(Ljava.util.Collection;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.2 //@children.5/@sourceConnections.1" name="Lecturersubjectmapping" location="786,639" size="196,57" id="classDefination/Lecturersubjectmapping" runTimeClassModel="subjectId">
+    <children xsi:type="editmodel:CompartmentEditModel" size="96,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="subjectId" id="classDefination/Lecturersubjectmapping#subjectId"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.14/@sourceConnections.5" name="Topicshortcut" location="76,2356" size="146,111" id="classDefination/Topicshortcut" runTimeClassModel="topicshortId,topicId,topTopicId,topicshortNote">
+    <children xsi:type="editmodel:CompartmentEditModel" size="123,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="topTopicId" id="classDefination/Topicshortcut#topTopicId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="topicId" id="classDefination/Topicshortcut#topicId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="topicshortId" id="classDefination/Topicshortcut#topicshortId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="topicshortNote" id="classDefination/Topicshortcut#topicshortNote"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.13/@sourceConnections.2 //@children.10/@sourceConnections.1" name="TestProcessAnswer" location="2108,1463" size="163,111" id="classDefination/TestProcessAnswer" runTimeClassModel="ansiIsSolution,ansiDesc,ansiValue,testitemScore">
+    <children xsi:type="editmodel:CompartmentEditModel" size="129,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="ansiDesc" id="classDefination/TestProcessAnswer#ansiDesc"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="ansiIsSolution" id="classDefination/TestProcessAnswer#ansiIsSolution"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="ansiValue" id="classDefination/TestProcessAnswer#ansiValue"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="testitemScore" id="classDefination/TestProcessAnswer#testitemScore"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.12/@sourceConnections.0" name="QuestionImage" location="1674,2907" size="138,75" id="classDefination/QuestionImage" runTimeClassModel="questimId,questimLink">
+    <children xsi:type="editmodel:CompartmentEditModel" size="109,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="questimId" id="classDefination/QuestionImage#questimId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="questimLink" id="classDefination/QuestionImage#questimLink"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/QuestionImage@questionImage+classDefination/Question@" source="//@children.4" target="//@children.13" targetEnd="//@children.4/@sourceConnections.0/@children.2" label="//@children.4/@sourceConnections.0/@children.0" sourceEnd="//@children.4/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="questionImage" location="45,0" id="classDefination/QuestionImage@questionImage+classDefination/Question@|classDefination/QuestionImage#questionImage" attachSource="true" multiplicityLabel="//@children.4/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.4/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + questionImage" location="1726,2886" size="81,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="1708,2886" size="4,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="149,715" id="classDefination/QuestionImage@questionImage+classDefination/Question@|classDefination/Question#"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.0" name="Subject" location="534,1207" size="205,391" id="classDefination/Subject" runTimeClassModel="getIteratorLecturer(),addTopic(LclassDefination.Topic;),removeAllLecturer(),removeSubjecttopicmapping(LclassDefination.Subjecttopicmapping;),setLecturer(Ljava.util.Collection;),removeAllTopic(),setTopic(Ljava.util.Collection;),removeLecturer(LclassDefination.Lecturer;),removeLecturersubjectmapping(LclassDefination.Lecturersubjectmapping;),getTopic(),subjectName,addSubjecttopicmapping(LclassDefination.Subjecttopicmapping;),addLecturersubjectmapping(LclassDefination.Lecturersubjectmapping;),subjectId,removeTopic(LclassDefination.Topic;),getIteratorTopic(),subjectShortname,getLecturer(),addLecturer(LclassDefination.Lecturer;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="140,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="subjectId" id="classDefination/Subject#subjectId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="subjectName" id="classDefination/Subject#subjectName"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="subjectShortname" id="classDefination/Subject#subjectShortname"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="182,288">
+      <children xsi:type="editmodel:MethodEditModel" name="addLecturer" id="classDefination/Subject#addLecturer(LclassDefination.Lecturer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addLecturersubjectmapping" id="classDefination/Subject#addLecturersubjectmapping(LclassDefination.Lecturersubjectmapping;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addSubjecttopicmapping" id="classDefination/Subject#addSubjecttopicmapping(LclassDefination.Subjecttopicmapping;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addTopic" id="classDefination/Subject#addTopic(LclassDefination.Topic;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIteratorLecturer" id="classDefination/Subject#getIteratorLecturer()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIteratorTopic" id="classDefination/Subject#getIteratorTopic()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getLecturer" id="classDefination/Subject#getLecturer()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTopic" id="classDefination/Subject#getTopic()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAllLecturer" id="classDefination/Subject#removeAllLecturer()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAllTopic" id="classDefination/Subject#removeAllTopic()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeLecturer" id="classDefination/Subject#removeLecturer(LclassDefination.Lecturer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeLecturersubjectmapping" id="classDefination/Subject#removeLecturersubjectmapping(LclassDefination.Lecturersubjectmapping;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeSubjecttopicmapping" id="classDefination/Subject#removeSubjecttopicmapping(LclassDefination.Subjecttopicmapping;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeTopic" id="classDefination/Subject#removeTopic(LclassDefination.Topic;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setLecturer" id="classDefination/Subject#setLecturer(Ljava.util.Collection;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setTopic" id="classDefination/Subject#setTopic(Ljava.util.Collection;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/Topic@topic+classDefination/Subject@subject" source="//@children.5" target="//@children.14" targetEnd="//@children.5/@sourceConnections.0/@children.2" label="//@children.5/@sourceConnections.0/@children.0" sourceEnd="//@children.5/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="subject" location="205,381" id="classDefination/Topic@topic+classDefination/Subject@subject|classDefination/Subject#subject" attachSource="true" multiplicityLabel="//@children.5/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.5/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + subject" location="746,1567" size="47,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="746,1595" size="4,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="topic" location="10,0" id="classDefination/Topic@topic+classDefination/Subject@subject|classDefination/Topic#topic" multiplicityLabel="//@children.5/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.5/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + topic" location="786,1863" size="35,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="768,1863" size="4,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/Subject@subject+classDefination/Lecturersubjectmapping@" source="//@children.5" target="//@children.1" targetEnd="//@children.5/@sourceConnections.1/@children.2" label="//@children.5/@sourceConnections.1/@children.0" sourceEnd="//@children.5/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="subject" location="195,0" id="classDefination/Subject@subject+classDefination/Lecturersubjectmapping@|classDefination/Subject#subject" attachSource="true" multiplicityLabel="//@children.5/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.5/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + subject" location="675,1186" size="47,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="736,1186" size="18,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,47" id="classDefination/Subject@subject+classDefination/Lecturersubjectmapping@|classDefination/Lecturersubjectmapping#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/Subject@subject+classDefination/Subjecttopicmapping@" source="//@children.5" target="//@children.11" targetEnd="//@children.5/@sourceConnections.2/@children.2" label="//@children.5/@sourceConnections.2/@children.0" sourceEnd="//@children.5/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="subject" location="0,386" id="classDefination/Subject@subject+classDefination/Subjecttopicmapping@|classDefination/Subject#subject" attachSource="true" multiplicityLabel="//@children.5/@sourceConnections.2/@children.1/@children.1" roleLabel="//@children.5/@sourceConnections.2/@children.1/@children.0" navigable="true" changeability="2">
+        <children xsi:type="editmodel:LabelEditModel" name=" + subject" location="480,1572" size="47,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="509,1600" size="18,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="177,4" id="classDefination/Subject@subject+classDefination/Subjecttopicmapping@|classDefination/Subjecttopicmapping#"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Lecturer" location="1229,1318" size="218,553" id="classDefination/Lecturer" runTimeClassModel="getIteratorTest(),lecturerId,getIteratorLecturersubjectmapping(),setQuestion(Ljava.util.Collection;),removeAllQuestion(),addSubject(LclassDefination.Subject;),setTopic(Ljava.util.Collection;),removeSubject(LclassDefination.Subject;),getTopic(),setLecturersubjectmapping(Ljava.util.Collection;),removeQuestion(LclassDefination.Question;),addQuestion(LclassDefination.Question;),removeAllLecturersubjectmapping(),getLecturersubjectmapping(),addTopic(LclassDefination.Topic;),setTest(Ljava.util.Collection;),removeAllTopic(),removeTest(LclassDefination.Test;),getTest(),removeLecturersubjectmapping(LclassDefination.Lecturersubjectmapping;),addTest(LclassDefination.Test;),addLecturersubjectmapping(LclassDefination.Lecturersubjectmapping;),removeTopic(LclassDefination.Topic;),getQuestion(),getIteratorTopic(),getIteratorQuestion(),removeAllTest(),lecturerName">
+    <children xsi:type="editmodel:CompartmentEditModel" size="117,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="lecturerId" id="classDefination/Lecturer#lecturerId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="lecturerName" id="classDefination/Lecturer#lecturerName"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="195,468">
+      <children xsi:type="editmodel:MethodEditModel" name="addLecturersubjectmapping" id="classDefination/Lecturer#addLecturersubjectmapping(LclassDefination.Lecturersubjectmapping;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addQuestion" id="classDefination/Lecturer#addQuestion(LclassDefination.Question;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addSubject" id="classDefination/Lecturer#addSubject(LclassDefination.Subject;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addTest" id="classDefination/Lecturer#addTest(LclassDefination.Test;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addTopic" id="classDefination/Lecturer#addTopic(LclassDefination.Topic;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIteratorLecturersubjectmapping" id="classDefination/Lecturer#getIteratorLecturersubjectmapping()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIteratorQuestion" id="classDefination/Lecturer#getIteratorQuestion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIteratorTest" id="classDefination/Lecturer#getIteratorTest()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIteratorTopic" id="classDefination/Lecturer#getIteratorTopic()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getLecturersubjectmapping" id="classDefination/Lecturer#getLecturersubjectmapping()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getQuestion" id="classDefination/Lecturer#getQuestion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTest" id="classDefination/Lecturer#getTest()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTopic" id="classDefination/Lecturer#getTopic()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAllLecturersubjectmapping" id="classDefination/Lecturer#removeAllLecturersubjectmapping()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAllQuestion" id="classDefination/Lecturer#removeAllQuestion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAllTest" id="classDefination/Lecturer#removeAllTest()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAllTopic" id="classDefination/Lecturer#removeAllTopic()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeLecturersubjectmapping" id="classDefination/Lecturer#removeLecturersubjectmapping(LclassDefination.Lecturersubjectmapping;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeQuestion" id="classDefination/Lecturer#removeQuestion(LclassDefination.Question;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeSubject" id="classDefination/Lecturer#removeSubject(LclassDefination.Subject;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeTest" id="classDefination/Lecturer#removeTest(LclassDefination.Test;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeTopic" id="classDefination/Lecturer#removeTopic(LclassDefination.Topic;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setLecturersubjectmapping" id="classDefination/Lecturer#setLecturersubjectmapping(Ljava.util.Collection;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setQuestion" id="classDefination/Lecturer#setQuestion(Ljava.util.Collection;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setTest" id="classDefination/Lecturer#setTest(Ljava.util.Collection;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setTopic" id="classDefination/Lecturer#setTopic(Ljava.util.Collection;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/Lecturer@lecturer+classDefination/Subject@" source="//@children.6" target="//@children.5" targetEnd="//@children.6/@sourceConnections.0/@children.2" label="//@children.6/@sourceConnections.0/@children.0" sourceEnd="//@children.6/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="lecturer" location="0,140" id="classDefination/Lecturer@lecturer+classDefination/Subject@|classDefination/Lecturer#lecturer" attachSource="true" multiplicityLabel="//@children.6/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.6/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + lecturer" location="1173,1437" size="49,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="1218,1465" size="4,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="205,251" id="classDefination/Lecturer@lecturer+classDefination/Subject@|classDefination/Subject#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/Topic@topic+classDefination/Lecturer@" source="//@children.6" target="//@children.14" targetEnd="//@children.6/@sourceConnections.1/@children.2" label="//@children.6/@sourceConnections.1/@children.0" sourceEnd="//@children.6/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,543" id="classDefination/Topic@topic+classDefination/Lecturer@|classDefination/Lecturer#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="topic" location="250,0" id="classDefination/Topic@topic+classDefination/Lecturer@|classDefination/Topic#topic" multiplicityLabel="//@children.6/@sourceConnections.1/@children.2/@children.1" roleLabel="//@children.6/@sourceConnections.1/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + topic" location="977,1863" size="35,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="1026,1863" size="4,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/Lecturer@lecturer+classDefination/Lecturersubjectmapping@lecturersubjectmapping" source="//@children.6" target="//@children.1" targetEnd="//@children.6/@sourceConnections.2/@children.2" label="//@children.6/@sourceConnections.2/@children.0" sourceEnd="//@children.6/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="lecturer" location="0,10" id="classDefination/Lecturer@lecturer+classDefination/Lecturersubjectmapping@lecturersubjectmapping|classDefination/Lecturer#lecturer" attachSource="true" multiplicityLabel="//@children.6/@sourceConnections.2/@children.1/@children.1" roleLabel="//@children.6/@sourceConnections.2/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + lecturer" location="1173,1335" size="49,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1204,1307" size="18,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="lecturersubjectmapping" location="186,57" id="classDefination/Lecturer@lecturer+classDefination/Lecturersubjectmapping@lecturersubjectmapping|classDefination/Lecturersubjectmapping#lecturersubjectmapping" multiplicityLabel="//@children.6/@sourceConnections.2/@children.2/@children.1" roleLabel="//@children.6/@sourceConnections.2/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + lecturersubjectmapping" location="841,703" size="124,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="979,703" size="4,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/Lecturer@lecturer+classDefination/Test@test" source="//@children.6" target="//@children.16" targetEnd="//@children.6/@sourceConnections.3/@children.2" label="//@children.6/@sourceConnections.3/@children.0" sourceEnd="//@children.6/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="lecturer" location="208,0" id="classDefination/Lecturer@lecturer+classDefination/Test@test|classDefination/Lecturer#lecturer" attachSource="true" multiplicityLabel="//@children.6/@sourceConnections.3/@children.1/@children.1" roleLabel="//@children.6/@sourceConnections.3/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + lecturer" location="1381,1297" size="49,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1444,1297" size="18,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="test" location="0,381" id="classDefination/Lecturer@lecturer+classDefination/Test@test|classDefination/Test#test" multiplicityLabel="//@children.6/@sourceConnections.3/@children.2/@children.1" roleLabel="//@children.6/@sourceConnections.3/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + test" location="1853,1242" size="30,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="1879,1270" size="4,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/Question@question+classDefination/Lecturer@" source="//@children.6" target="//@children.13" targetEnd="//@children.6/@sourceConnections.4/@children.2" label="//@children.6/@sourceConnections.4/@children.0" sourceEnd="//@children.6/@sourceConnections.4/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="218,543" id="classDefination/Question@question+classDefination/Lecturer@|classDefination/Lecturer#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="question" location="10,0" id="classDefination/Question@question+classDefination/Lecturer@|classDefination/Question#question" multiplicityLabel="//@children.6/@sourceConnections.4/@children.2/@children.1" roleLabel="//@children.6/@sourceConnections.4/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + question" location="1587,2032" size="53,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="1569,2032" size="4,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.13/@sourceConnections.0 //@children.15/@sourceConnections.0" name="TestItem" location="2353,2084" size="135,93" id="classDefination/TestItem" runTimeClassModel="testitemNote,testitemId,testitemScore">
+    <children xsi:type="editmodel:CompartmentEditModel" size="112,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="testitemId" id="classDefination/TestItem#testitemId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="testitemNote" id="classDefination/TestItem#testitemNote"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="testitemScore" id="classDefination/TestItem#testitemScore"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.14/@sourceConnections.0 //@children.13/@sourceConnections.1" name="QuestionShortcut" location="915,2575" size="164,75" id="classDefination/QuestionShortcut" runTimeClassModel="questshortId,questionshortNote">
+    <children xsi:type="editmodel:CompartmentEditModel" size="141,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="questionshortNote" id="classDefination/QuestionShortcut#questionshortNote"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="questshortId" id="classDefination/QuestionShortcut#questshortId"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.14/@sourceConnections.4 //@children.13/@sourceConnections.3" name="Topicquestionmapping" location="1108,2378" size="186,57" id="classDefination/Topicquestionmapping" runTimeClassModel="questionId">
+    <children xsi:type="editmodel:CompartmentEditModel" size="85,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="questionId" id="classDefination/Topicquestionmapping#questionId"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.16/@sourceConnections.1" name="TestProcess" location="2429,661" size="238,219" id="classDefination/TestProcess" runTimeClassModel="testId,studentId,tEndTime,tStartTime,testProcessAnswer,testProcessId,isPass,tTestDate,testScore,testTakenTime">
+    <children xsi:type="editmodel:CompartmentEditModel" size="215,180">
+      <children xsi:type="editmodel:AttributeEditModel" name="isPass" id="classDefination/TestProcess#isPass"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="studentId" id="classDefination/TestProcess#studentId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tEndTime" id="classDefination/TestProcess#tEndTime"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tStartTime" id="classDefination/TestProcess#tStartTime"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tTestDate" id="classDefination/TestProcess#tTestDate"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="testId" id="classDefination/TestProcess#testId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="testProcessAnswer" id="classDefination/TestProcess#testProcessAnswer"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="testProcessId" id="classDefination/TestProcess#testProcessId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="testScore" id="classDefination/TestProcess#testScore"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="testTakenTime" id="classDefination/TestProcess#testTakenTime"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/TestProcess@testProcess+classDefination/Student@student" source="//@children.10" target="//@children.0" targetEnd="//@children.10/@sourceConnections.0/@children.2" label="//@children.10/@sourceConnections.0/@children.0" sourceEnd="//@children.10/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="testProcess" location="228,0" id="classDefination/TestProcess@testProcess+classDefination/Student@student|classDefination/TestProcess#testProcess" attachSource="true" multiplicityLabel="//@children.10/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.10/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + testProcess" location="2580,640" size="70,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="2664,640" size="4,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="student" location="0,399" id="classDefination/TestProcess@testProcess+classDefination/Student@student|classDefination/Student#student" multiplicityLabel="//@children.10/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.10/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + student" location="2778,428" size="48,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="2808,456" size="18,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/TestProcess@fk_TestProcessAnswer_TestProcess1+classDefination/TestProcessAnswer@" source="//@children.10" target="//@children.3" targetEnd="//@children.10/@sourceConnections.1/@children.2" label="//@children.10/@sourceConnections.1/@children.0" sourceEnd="//@children.10/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="fk_TestProcessAnswer_TestProcess1" location="10,219" id="classDefination/TestProcess@fk_TestProcessAnswer_TestProcess1+classDefination/TestProcessAnswer@|classDefination/TestProcess#fk_TestProcessAnswer_TestProcess1" attachSource="true" multiplicityLabel="//@children.10/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.10/@sourceConnections.1/@children.1/@children.0" navigable="true" changeability="2">
+        <children xsi:type="editmodel:LabelEditModel" name=" + fk_TestProcessAnswer_TestProcess1" location="2446,887" size="199,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="2414,887" size="18,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="163,10" id="classDefination/TestProcess@fk_TestProcessAnswer_TestProcess1+classDefination/TestProcessAnswer@|classDefination/TestProcessAnswer#"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.5/@sourceConnections.2 //@children.14/@sourceConnections.3" name="Subjecttopicmapping" location="50,1589" size="177,139" id="classDefination/Subjecttopicmapping" runTimeClassModel="getTopic(),setTopic(LclassDefination.Topic;),topicId,getSubject(),setSubject(LclassDefination.Subject;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="67,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="topicId" id="classDefination/Subjecttopicmapping#topicId"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="81,72">
+      <children xsi:type="editmodel:MethodEditModel" name="getSubject" id="classDefination/Subjecttopicmapping#getSubject()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTopic" id="classDefination/Subjecttopicmapping#getTopic()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSubject" id="classDefination/Subjecttopicmapping#setSubject(LclassDefination.Subject;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setTopic" id="classDefination/Subjecttopicmapping#setTopic(LclassDefination.Topic;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="AnswerItem" location="2102,2688" size="173,229" id="classDefination/AnswerItem" runTimeClassModel="getQuestionImage(),addQuestionImage(LclassDefination.QuestionImage;),ansiIsSolution,removeAllQuestionImage(),setQuestionImage(Ljava.util.Collection;),ansiDesc,getIteratorQuestionImage(),removeQuestionImage(LclassDefination.QuestionImage;),ansiId,ansiValue">
+    <children xsi:type="editmodel:CompartmentEditModel" size="129,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="ansiDesc" id="classDefination/AnswerItem#ansiDesc"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="ansiId" id="classDefination/AnswerItem#ansiId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="ansiIsSolution" id="classDefination/AnswerItem#ansiIsSolution"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="ansiValue" id="classDefination/AnswerItem#ansiValue"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="150,108">
+      <children xsi:type="editmodel:MethodEditModel" name="addQuestionImage" id="classDefination/AnswerItem#addQuestionImage(LclassDefination.QuestionImage;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIteratorQuestionImage" id="classDefination/AnswerItem#getIteratorQuestionImage()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getQuestionImage" id="classDefination/AnswerItem#getQuestionImage()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAllQuestionImage" id="classDefination/AnswerItem#removeAllQuestionImage()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeQuestionImage" id="classDefination/AnswerItem#removeQuestionImage(LclassDefination.QuestionImage;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setQuestionImage" id="classDefination/AnswerItem#setQuestionImage(Ljava.util.Collection;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/QuestionImage@questionImage+classDefination/AnswerItem@" source="//@children.12" target="//@children.4" targetEnd="//@children.12/@sourceConnections.0/@children.2" label="//@children.12/@sourceConnections.0/@children.0" sourceEnd="//@children.12/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,224" id="classDefination/QuestionImage@questionImage+classDefination/AnswerItem@|classDefination/AnswerItem#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="questionImage" location="138,5" id="classDefination/QuestionImage@questionImage+classDefination/AnswerItem@|classDefination/QuestionImage#questionImage" multiplicityLabel="//@children.12/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.12/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + questionImage" location="1819,2891" size="81,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="1819,2919" size="4,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/AnswerItem@answerItem+classDefination/Question@" source="//@children.12" target="//@children.13" targetEnd="//@children.12/@sourceConnections.1/@children.2" label="//@children.12/@sourceConnections.1/@children.0" sourceEnd="//@children.12/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="answerItem" location="0,39" id="classDefination/AnswerItem@answerItem+classDefination/Question@|classDefination/AnswerItem#answerItem" attachSource="true" multiplicityLabel="//@children.12/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.12/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + answerItem" location="2026,2706" size="69,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="2091,2734" size="4,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="195,674" id="classDefination/AnswerItem@answerItem+classDefination/Question@|classDefination/Question#"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.12/@sourceConnections.1 //@children.4/@sourceConnections.0 //@children.6/@sourceConnections.4 //@children.14/@sourceConnections.2" name="Question" location="1570,2053" size="195,715" id="classDefination/Question" runTimeClassModel="removeAllTestItem(),addQuestionImage(LclassDefination.QuestionImage;),setQuestionShortcut(Ljava.util.Collection;),addTopicquestionmapping(LclassDefination.Topicquestionmapping;),questionId,getAnswerItem(),setQuestionImage(Ljava.util.Collection;),addAnswerItem(LclassDefination.AnswerItem;),getIteratorAnswerItem(),removeAnswerItem(LclassDefination.AnswerItem;),getIteratorQuestionShortcut(),removeQuestionImage(LclassDefination.QuestionImage;),removeQuestionShortcut(LclassDefination.QuestionShortcut;),getQuestionShortcut(),setTopic(Ljava.util.Collection;),addTestItem(LclassDefination.TestItem;),getTopic(),removeAllQuestionImage(),removeTestItem(LclassDefination.TestItem;),setTestItem(Ljava.util.Collection;),questionType,getTestItem(),setLecturer(LclassDefination.Lecturer;),getIteratorTestItem(),questionLevel,addQuestionShortcut(LclassDefination.QuestionShortcut;),addTopic(LclassDefination.Topic;),removeAllTopic(),removeAllAnswerItem(),removeTopicquestionmapping(LclassDefination.Topicquestionmapping;),setAnswerItem(Ljava.util.Collection;),questionDesc,getQuestionImage(),removeAllQuestionShortcut(),removeTopic(LclassDefination.Topic;),getIteratorQuestionImage(),getIteratorTopic()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="119,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="questionDesc" id="classDefination/Question#questionDesc"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="questionId" id="classDefination/Question#questionId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="questionLevel" id="classDefination/Question#questionLevel"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="questionType" id="classDefination/Question#questionType"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="172,594">
+      <children xsi:type="editmodel:MethodEditModel" name="addAnswerItem" id="classDefination/Question#addAnswerItem(LclassDefination.AnswerItem;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addQuestionImage" id="classDefination/Question#addQuestionImage(LclassDefination.QuestionImage;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addQuestionShortcut" id="classDefination/Question#addQuestionShortcut(LclassDefination.QuestionShortcut;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addTestItem" id="classDefination/Question#addTestItem(LclassDefination.TestItem;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addTopic" id="classDefination/Question#addTopic(LclassDefination.Topic;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addTopicquestionmapping" id="classDefination/Question#addTopicquestionmapping(LclassDefination.Topicquestionmapping;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAnswerItem" id="classDefination/Question#getAnswerItem()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIteratorAnswerItem" id="classDefination/Question#getIteratorAnswerItem()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIteratorQuestionImage" id="classDefination/Question#getIteratorQuestionImage()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIteratorQuestionShortcut" id="classDefination/Question#getIteratorQuestionShortcut()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIteratorTestItem" id="classDefination/Question#getIteratorTestItem()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIteratorTopic" id="classDefination/Question#getIteratorTopic()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getQuestionImage" id="classDefination/Question#getQuestionImage()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getQuestionShortcut" id="classDefination/Question#getQuestionShortcut()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTestItem" id="classDefination/Question#getTestItem()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTopic" id="classDefination/Question#getTopic()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAllAnswerItem" id="classDefination/Question#removeAllAnswerItem()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAllQuestionImage" id="classDefination/Question#removeAllQuestionImage()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAllQuestionShortcut" id="classDefination/Question#removeAllQuestionShortcut()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAllTestItem" id="classDefination/Question#removeAllTestItem()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAllTopic" id="classDefination/Question#removeAllTopic()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAnswerItem" id="classDefination/Question#removeAnswerItem(LclassDefination.AnswerItem;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeQuestionImage" id="classDefination/Question#removeQuestionImage(LclassDefination.QuestionImage;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeQuestionShortcut" id="classDefination/Question#removeQuestionShortcut(LclassDefination.QuestionShortcut;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeTestItem" id="classDefination/Question#removeTestItem(LclassDefination.TestItem;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeTopic" id="classDefination/Question#removeTopic(LclassDefination.Topic;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeTopicquestionmapping" id="classDefination/Question#removeTopicquestionmapping(LclassDefination.Topicquestionmapping;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setAnswerItem" id="classDefination/Question#setAnswerItem(Ljava.util.Collection;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setLecturer" id="classDefination/Question#setLecturer(LclassDefination.Lecturer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setQuestionImage" id="classDefination/Question#setQuestionImage(Ljava.util.Collection;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setQuestionShortcut" id="classDefination/Question#setQuestionShortcut(Ljava.util.Collection;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setTestItem" id="classDefination/Question#setTestItem(Ljava.util.Collection;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setTopic" id="classDefination/Question#setTopic(Ljava.util.Collection;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/TestItem@testItem+classDefination/Question@" source="//@children.13" target="//@children.7" targetEnd="//@children.13/@sourceConnections.0/@children.2" label="//@children.13/@sourceConnections.0/@children.0" sourceEnd="//@children.13/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="195,77" id="classDefination/TestItem@testItem+classDefination/Question@|classDefination/Question#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="testItem" location="0,46" id="classDefination/TestItem@testItem+classDefination/Question@|classDefination/TestItem#testItem" multiplicityLabel="//@children.13/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.13/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + testItem" location="2297,2109" size="49,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="2342,2137" size="4,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/QuestionShortcut@questionShortcut+classDefination/Question@" source="//@children.13" target="//@children.8" targetEnd="//@children.13/@sourceConnections.1/@children.2" label="//@children.13/@sourceConnections.1/@children.0" sourceEnd="//@children.13/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,559" id="classDefination/QuestionShortcut@questionShortcut+classDefination/Question@|classDefination/Question#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="questionShortcut" location="164,37" id="classDefination/QuestionShortcut@questionShortcut+classDefination/Question@|classDefination/QuestionShortcut#questionShortcut" multiplicityLabel="//@children.13/@sourceConnections.1/@children.2/@children.1" roleLabel="//@children.13/@sourceConnections.1/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + questionShortcut" location="1086,2591" size="94,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="1086,2619" size="4,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/Question@fk_TestProcessAnswer_question1+classDefination/TestProcessAnswer@" source="//@children.13" target="//@children.3" targetEnd="//@children.13/@sourceConnections.2/@children.2" label="//@children.13/@sourceConnections.2/@children.0" sourceEnd="//@children.13/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="fk_TestProcessAnswer_question1" location="195,10" id="classDefination/Question@fk_TestProcessAnswer_question1+classDefination/TestProcessAnswer@|classDefination/Question#fk_TestProcessAnswer_question1" attachSource="true" multiplicityLabel="//@children.13/@sourceConnections.2/@children.1/@children.1" roleLabel="//@children.13/@sourceConnections.2/@children.1/@children.0" navigable="true" changeability="2">
+        <children xsi:type="editmodel:LabelEditModel" name=" + fk_TestProcessAnswer_question1" location="1772,2070" size="180,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1772,2042" size="18,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,111" id="classDefination/Question@fk_TestProcessAnswer_question1+classDefination/TestProcessAnswer@|classDefination/TestProcessAnswer#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/Question@question+classDefination/Topicquestionmapping@" source="//@children.13" target="//@children.9" targetEnd="//@children.13/@sourceConnections.3/@children.2" label="//@children.13/@sourceConnections.3/@children.0" sourceEnd="//@children.13/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="question" location="0,353" id="classDefination/Question@question+classDefination/Topicquestionmapping@|classDefination/Question#question" attachSource="true" multiplicityLabel="//@children.13/@sourceConnections.3/@children.1/@children.1" roleLabel="//@children.13/@sourceConnections.3/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + question" location="1510,2385" size="53,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1545,2413" size="18,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="186,28" id="classDefination/Question@question+classDefination/Topicquestionmapping@|classDefination/Topicquestionmapping#"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.1 //@children.5/@sourceConnections.0 //@children.14/@sourceConnections.1" name="Topic" location="769,1884" size="260,643" id="classDefination/Topic" runTimeClassModel="topicShortcut,topicNote,getIteratorTopicB(),addTopicquestionmapping(LclassDefination.Topicquestionmapping;),setQuestionShortcut(Ljava.util.Collection;),removeSubjecttopicmapping(LclassDefination.Subjecttopicmapping;),getIteratorQuestionShortcut(),getTopicB(),setQuestion(Ljava.util.Collection;),removeAllSubject(),removeAllQuestion(),getSubject(),addSubject(LclassDefination.Subject;),addTopicB(LclassDefination.Topic;),removeQuestionShortcut(LclassDefination.QuestionShortcut;),getQuestionShortcut(),removeSubject(LclassDefination.Subject;),addSubjecttopicmapping(LclassDefination.Subjecttopicmapping;),removeQuestion(LclassDefination.Question;),addQuestion(LclassDefination.Question;),removeAllTopicB(),setLecturer(LclassDefination.Lecturer;),getIteratorSubject(),setSubject(Ljava.util.Collection;),topicName,addQuestionShortcut(LclassDefination.QuestionShortcut;),removeTopicquestionmapping(LclassDefination.Topicquestionmapping;),removeAllQuestionShortcut(),setTopicB(Ljava.util.Collection;),removeTopicB(LclassDefination.Topic;),topicId,getQuestion(),getIteratorQuestion()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="237,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="topicId" id="classDefination/Topic#topicId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="topicName" id="classDefination/Topic#topicName"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="topicNote" id="classDefination/Topic#topicNote"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="topicShortcut" id="classDefination/Topic#topicShortcut"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="172,522">
+      <children xsi:type="editmodel:MethodEditModel" name="addQuestion" id="classDefination/Topic#addQuestion(LclassDefination.Question;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addQuestionShortcut" id="classDefination/Topic#addQuestionShortcut(LclassDefination.QuestionShortcut;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addSubject" id="classDefination/Topic#addSubject(LclassDefination.Subject;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addSubjecttopicmapping" id="classDefination/Topic#addSubjecttopicmapping(LclassDefination.Subjecttopicmapping;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addTopicB" id="classDefination/Topic#addTopicB(LclassDefination.Topic;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addTopicquestionmapping" id="classDefination/Topic#addTopicquestionmapping(LclassDefination.Topicquestionmapping;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIteratorQuestion" id="classDefination/Topic#getIteratorQuestion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIteratorQuestionShortcut" id="classDefination/Topic#getIteratorQuestionShortcut()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIteratorSubject" id="classDefination/Topic#getIteratorSubject()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIteratorTopicB" id="classDefination/Topic#getIteratorTopicB()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getQuestion" id="classDefination/Topic#getQuestion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getQuestionShortcut" id="classDefination/Topic#getQuestionShortcut()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getSubject" id="classDefination/Topic#getSubject()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTopicB" id="classDefination/Topic#getTopicB()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAllQuestion" id="classDefination/Topic#removeAllQuestion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAllQuestionShortcut" id="classDefination/Topic#removeAllQuestionShortcut()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAllSubject" id="classDefination/Topic#removeAllSubject()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAllTopicB" id="classDefination/Topic#removeAllTopicB()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeQuestion" id="classDefination/Topic#removeQuestion(LclassDefination.Question;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeQuestionShortcut" id="classDefination/Topic#removeQuestionShortcut(LclassDefination.QuestionShortcut;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeSubject" id="classDefination/Topic#removeSubject(LclassDefination.Subject;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeSubjecttopicmapping" id="classDefination/Topic#removeSubjecttopicmapping(LclassDefination.Subjecttopicmapping;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeTopicB" id="classDefination/Topic#removeTopicB(LclassDefination.Topic;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeTopicquestionmapping" id="classDefination/Topic#removeTopicquestionmapping(LclassDefination.Topicquestionmapping;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setLecturer" id="classDefination/Topic#setLecturer(LclassDefination.Lecturer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setQuestion" id="classDefination/Topic#setQuestion(Ljava.util.Collection;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setQuestionShortcut" id="classDefination/Topic#setQuestionShortcut(Ljava.util.Collection;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSubject" id="classDefination/Topic#setSubject(Ljava.util.Collection;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setTopicB" id="classDefination/Topic#setTopicB(Ljava.util.Collection;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/QuestionShortcut@questionShortcut+classDefination/Topic@" source="//@children.14" target="//@children.8" targetEnd="//@children.14/@sourceConnections.0/@children.2" label="//@children.14/@sourceConnections.0/@children.0" sourceEnd="//@children.14/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="202,643" id="classDefination/QuestionShortcut@questionShortcut+classDefination/Topic@|classDefination/Topic#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="questionShortcut" location="56,0" id="classDefination/QuestionShortcut@questionShortcut+classDefination/Topic@|classDefination/QuestionShortcut#questionShortcut" multiplicityLabel="//@children.14/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.14/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + questionShortcut" location="978,2554" size="94,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="960,2554" size="4,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/Topic@topicB+classDefination/Topic@" source="//@children.14" target="//@children.14" targetEnd="//@children.14/@sourceConnections.1/@children.2" label="//@children.14/@sourceConnections.1/@children.0" sourceEnd="//@children.14/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="topicB" location="0,20" id="classDefination/Topic@topicB+classDefination/Topic@|classDefination/Topic#topicB" anchorKind="FixedAtEdge" attachSource="true" multiplicityLabel="//@children.14/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.14/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + topicB" location="720,1911" size="42,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="758,1883" size="4,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="20,0" id="classDefination/Topic@topicB+classDefination/Topic@|classDefination/Topic#" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/Topic@topic+classDefination/Question@question" source="//@children.14" target="//@children.13" targetEnd="//@children.14/@sourceConnections.2/@children.2" label="//@children.14/@sourceConnections.2/@children.0" sourceEnd="//@children.14/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="topic" location="260,405" id="classDefination/Topic@topic+classDefination/Question@question|classDefination/Topic#topic" attachSource="true" multiplicityLabel="//@children.14/@sourceConnections.2/@children.1/@children.1" roleLabel="//@children.14/@sourceConnections.2/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + topic" location="1036,2268" size="35,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="1036,2296" size="4,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="question" location="0,236" id="classDefination/Topic@topic+classDefination/Question@question|classDefination/Question#question" multiplicityLabel="//@children.14/@sourceConnections.2/@children.2/@children.1" roleLabel="//@children.14/@sourceConnections.2/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + question" location="1510,2268" size="53,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="1559,2296" size="4,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/Topic@topic+classDefination/Subjecttopicmapping@" source="//@children.14" target="//@children.11" targetEnd="//@children.14/@sourceConnections.3/@children.2" label="//@children.14/@sourceConnections.3/@children.0" sourceEnd="//@children.14/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="topic" location="0,10" id="classDefination/Topic@topic+classDefination/Subjecttopicmapping@|classDefination/Topic#topic" attachSource="true" multiplicityLabel="//@children.14/@sourceConnections.3/@children.1/@children.1" roleLabel="//@children.14/@sourceConnections.3/@children.1/@children.0" navigable="true" changeability="2">
+        <children xsi:type="editmodel:LabelEditModel" name=" + topic" location="727,1901" size="35,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="744,1873" size="18,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="167,139" id="classDefination/Topic@topic+classDefination/Subjecttopicmapping@|classDefination/Subjecttopicmapping#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/Topic@topic+classDefination/Topicquestionmapping@" source="//@children.14" target="//@children.9" targetEnd="//@children.14/@sourceConnections.4/@children.2" label="//@children.14/@sourceConnections.4/@children.0" sourceEnd="//@children.14/@sourceConnections.4/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="topic" location="260,522" id="classDefination/Topic@topic+classDefination/Topicquestionmapping@|classDefination/Topic#topic" attachSource="true" multiplicityLabel="//@children.14/@sourceConnections.4/@children.1/@children.1" roleLabel="//@children.14/@sourceConnections.4/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + topic" location="1036,2385" size="35,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1036,2413" size="18,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="51,28" id="classDefination/Topic@topic+classDefination/Topicquestionmapping@|classDefination/Topicquestionmapping#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/Topic@topic+classDefination/Topicshortcut@" source="//@children.14" target="//@children.2" targetEnd="//@children.14/@sourceConnections.5/@children.2" label="//@children.14/@sourceConnections.5/@children.0" sourceEnd="//@children.14/@sourceConnections.5/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="topic" location="0,527" id="classDefination/Topic@topic+classDefination/Topicshortcut@|classDefination/Topic#topic" attachSource="true" multiplicityLabel="//@children.14/@sourceConnections.5/@children.1/@children.1" roleLabel="//@children.14/@sourceConnections.5/@children.1/@children.0" navigable="true" changeability="2">
+        <children xsi:type="editmodel:LabelEditModel" name=" + topic" location="727,2390" size="35,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="744,2418" size="18,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="146,55" id="classDefination/Topic@topic+classDefination/Topicshortcut@|classDefination/Topicshortcut#"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.16/@sourceConnections.0" name="TestSection" location="2696,1406" size="141,229" id="classDefination/TestSection" runTimeClassModel="removeAllTestItem(),addTestItem(LclassDefination.TestItem;),testsecName,testsecNote,testsecId,removeTestItem(LclassDefination.TestItem;),setTestItem(Ljava.util.Collection;),getTestItem(),getIteratorTestItem(),setTest(LclassDefination.Test;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="116,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="testsecId" id="classDefination/TestSection#testsecId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="testsecName" id="classDefination/TestSection#testsecName"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="testsecNote" id="classDefination/TestSection#testsecNote"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="118,126">
+      <children xsi:type="editmodel:MethodEditModel" name="addTestItem" id="classDefination/TestSection#addTestItem(LclassDefination.TestItem;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIteratorTestItem" id="classDefination/TestSection#getIteratorTestItem()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTestItem" id="classDefination/TestSection#getTestItem()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAllTestItem" id="classDefination/TestSection#removeAllTestItem()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeTestItem" id="classDefination/TestSection#removeTestItem(LclassDefination.TestItem;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setTest" id="classDefination/TestSection#setTest(LclassDefination.Test;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setTestItem" id="classDefination/TestSection#setTestItem(Ljava.util.Collection;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/TestItem@testItem+classDefination/TestSection@" source="//@children.15" target="//@children.7" targetEnd="//@children.15/@sourceConnections.0/@children.2" label="//@children.15/@sourceConnections.0/@children.0" sourceEnd="//@children.15/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,229" id="classDefination/TestItem@testItem+classDefination/TestSection@|classDefination/TestSection#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="testItem" location="135,10" id="classDefination/TestItem@testItem+classDefination/TestSection@|classDefination/TestItem#testItem" multiplicityLabel="//@children.15/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.15/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + testItem" location="2495,2101" size="49,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="2495,2073" size="4,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.3" name="Test" location="1890,882" size="162,391" id="classDefination/Test" runTimeClassModel="addTestsection(LclassDefination.TestSection;),testRequiredScore,testIsValidated,testDesc,testId,lecturerId,removeAllTestsection(),removeTestProcess(LclassDefination.TestProcess;),getTestProcess(),getTestsection(),getIteratorTestsection(),setTestsection(Ljava.util.Collection;),getIteratorTestProcess(),testDuration,removeAllTestProcess(),removeTestsection(LclassDefination.TestSection;),testTotalScore,addTestProcess(LclassDefination.TestProcess;),setTestProcess(Ljava.util.Collection;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="136,126">
+      <children xsi:type="editmodel:AttributeEditModel" name="lecturerId" id="classDefination/Test#lecturerId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="testDesc" id="classDefination/Test#testDesc"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="testDuration" id="classDefination/Test#testDuration"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="testId" id="classDefination/Test#testId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="testIsValidated" id="classDefination/Test#testIsValidated"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="testRequiredScore" id="classDefination/Test#testRequiredScore"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="testTotalScore" id="classDefination/Test#testTotalScore"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="139,216">
+      <children xsi:type="editmodel:MethodEditModel" name="addTestProcess" id="classDefination/Test#addTestProcess(LclassDefination.TestProcess;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addTestsection" id="classDefination/Test#addTestsection(LclassDefination.TestSection;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIteratorTestProcess" id="classDefination/Test#getIteratorTestProcess()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIteratorTestsection" id="classDefination/Test#getIteratorTestsection()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTestProcess" id="classDefination/Test#getTestProcess()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTestsection" id="classDefination/Test#getTestsection()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAllTestProcess" id="classDefination/Test#removeAllTestProcess()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAllTestsection" id="classDefination/Test#removeAllTestsection()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeTestProcess" id="classDefination/Test#removeTestProcess(LclassDefination.TestProcess;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeTestsection" id="classDefination/Test#removeTestsection(LclassDefination.TestSection;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setTestProcess" id="classDefination/Test#setTestProcess(Ljava.util.Collection;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setTestsection" id="classDefination/Test#setTestsection(Ljava.util.Collection;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/TestSection@testsection+classDefination/Test@" source="//@children.16" target="//@children.15" targetEnd="//@children.16/@sourceConnections.0/@children.2" label="//@children.16/@sourceConnections.0/@children.0" sourceEnd="//@children.16/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="162,381" id="classDefination/TestSection@testsection+classDefination/Test@|classDefination/Test#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="testsection" location="10,0" id="classDefination/TestSection@testsection+classDefination/Test@|classDefination/TestSection#testsection" multiplicityLabel="//@children.16/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.16/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + testsection" location="2713,1385" size="65,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="2695,1385" size="4,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="classDefination/Test@test+classDefination/TestProcess@testProcess" source="//@children.16" target="//@children.10" targetEnd="//@children.16/@sourceConnections.1/@children.2" label="//@children.16/@sourceConnections.1/@children.0" sourceEnd="//@children.16/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="test" location="152,0" id="classDefination/Test@test+classDefination/TestProcess@testProcess|classDefination/Test#test" attachSource="true" multiplicityLabel="//@children.16/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.16/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + test" location="2005,861" size="30,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="2049,861" size="18,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="testProcess" location="0,209" id="classDefination/Test@test+classDefination/TestProcess@testProcess|classDefination/TestProcess#testProcess" multiplicityLabel="//@children.16/@sourceConnections.1/@children.2/@children.1" roleLabel="//@children.16/@sourceConnections.1/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + testProcess" location="2352,849" size="70,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="2418,877" size="4,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="All" properties="wireOptions=3;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>

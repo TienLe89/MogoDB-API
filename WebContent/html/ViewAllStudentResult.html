@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>HTML</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="css/main.css">
+ <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+ <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+ <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+ <link rel="stylesheet" href="/resources/demos/style.css" />
+
+	  
+<script type="text/javascript">
+  jQuery(document).ready(function() {		
+	/*show datepicker*/
+	jQuery("#txtTestDate").datepicker({
+		showOn: "both",	
+		buttonImage: "images/ico-calenday.png",
+		buttonImageOnly: true,
+		buttonText:'',	
+		dateFormat:'yy-mm-dd',
+		maxDate:'0'
+	});
+	//jQuery('.tableContainer input:checkbox').attr("disabled","disabled");
+});
+  </script>
+
+<script>
+	function readCookie(name) {
+		//alert(name);
+	    var i, c, ca, nameEQ = name + "=";
+	    ca = document.cookie.split(';');
+	    for(i=0;i < ca.length;i++) {
+	        c = ca[i];
+	        while (c.charAt(0)==' ') {
+	            c = c.substring(1,c.length);
+	        }
+	        if (c.indexOf(nameEQ) == 0) {
+	            return c.substring(nameEQ.length,c.length);
+	        }
+	    }
+	    return '';
+	}
+	var requestObject;
+	var requestObjectCourseList; // For course list option
+	function doSearchClick(){
+		var LecturerID =  readCookie("LecturerID");
+		var url = "./rest/ViewAllStudentResult/getsearchlist/" + LecturerID +"/";
+		var temp=document.getElementById("txtTestDate").value;
+		if (temp =="") {temp="-";}
+		url =url+temp+"/";
+		temp=document.getElementById("drlCourseList").value;
+		if (temp =="All") {temp="-";}
+		url+=temp+"/";
+		temp=document.getElementById("txtCourseLikeSearch").value
+		if (temp =="") {temp="-";}
+		url+=temp;	
+		LoadPageData(url);
+	}
+	function onPageLoad(){
+		var LecturerID =  readCookie("LecturerID");
+		var url = "./rest/ViewAllStudentResult/getlist/" + LecturerID ;	
+		document.getElementById("lblUserName").innerHTML = readCookie("LecturerName");
+		
+		LoadPageData(url);
+	}
+	
+	function LoadPageData(url){		
+		//1. Prepare the input data
+		
+		var LecturerID =  readCookie("LecturerID");
+	//	alert(LecturerID);
+	//	document.getElementById("LecturerID").innerHTML = LecturerID
+		//2. obtain new object
+		if(window.XMLHttpRequest){
+			//Workable with: IE7+, Firefox, Chrome, Opera, Safari
+			requestObject = new XMLHttpRequest();
+			requestObjectCourseList = new XMLHttpRequest();
+		}
+		else{
+			//Workable with: IE5, IE6
+			requestObject = new ActiveXObject("Microsoft.XMLHTTP");
+			requestObjectCourseList = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	
+	    //3. set the callback function
+	    // the callback will be called when the result is available
+	    
+	    requestObject.onreadystatechange = processResult;
+		
+	    
+	    //4. Specify the service which will be called   
+	    //Url is the parameter
+
+	    //5. Send the request to server
+	    requestObject.open("GET", url, true); //true = Working in ASYNC mode
+	    requestObject.send(null);
+	    
+	    //6. Load course list
+  		requestObjectCourseList.onreadystatechange = processAddCourseList ;
+	    
+	    //7. Specify the service which will be called   
+	    url = "./rest/ViewAllStudentResult/getCourselist/" + LecturerID ;
+	 
+	    //8. Send the request to server
+	    requestObjectCourseList.open("GET", url, true); //true = Working in ASYNC mode
+	    requestObjectCourseList.send(null);   
+	    	    
+	}
+	function processAddCourseList(){
+		if (requestObjectCourseList.readyState == 4) {
+	        if (requestObjectCourseList.status == 200) { // 200 means "OK"
+	        	  //the result, we know before as text -  use requestObject.responseText
+	        	var obj = eval ("(" + requestObjectCourseList.responseText + ")");
+	        	
+	        	var x=document.getElementById("drlCourseList");
+	        	
+	        	x.options.length=1;
+	        	for(var i=0; i< obj.students.length; i++){
+	        		var option=document.createElement("option");
+	        		option.text=obj.students[i].SUBJECT_NAME;
+	        		option.value=obj.students[i].SUBJECT_NAME;
+	        		
+		        	try{ // for IE earlier than version 8
+		        	  x.add(option,x.options[null]);
+		        	}
+		        	catch (e){x.add(option,null);}
+		
+	        	}
+	        	
+	        	
+	        } else {
+	            alert("There was a problem in the returned data-:\n"+ requestObject.status.toString());
+	        }
+		}	    
+	}
+	
+	function processResult(){
+		
+		if (requestObject.readyState == 4) {
+			
+	        if (requestObject.status == 200) { // 200 means "OK"
+	            //the result, we know before as text -  use requestObject.responseText
+	            
+	        		        	 
+	        	var obj = eval ("(" + requestObject.responseText + ")");
+	        	
+
+	        	var innerText = "<table width='100%' border='0' cellspacing='1' cellpadding='1'>"+
+	        	" <tr><td>No</td><td>Exam Code</td><td>Course Name</td><td>Student Name</td><td>Student ID</td><td>Gender</td><td>Score</td><td>Pass</td><td>Test Date </td><td>No Taking Test</td></tr>";
+	        	
+	        	for(var i=0; i< obj.students.length; i++){
+	        		
+	        		if(i%2==0) {innerText += "<tr class='white'>";}
+	        		else {innerText += "<tr class='greg'>";}
+	        		innerText += "<td align='center'>" + (i+1) + "</td>";
+        			innerText += "<td align='center'>" + obj.students[i].TEST_ID + "</td>";
+        			innerText += "<td align='center'>" + obj.students[i].SUBJECT_NAME + "</td>";
+        			innerText += "<td align='center'>" + obj.students[i].STUDENT_NAME + "</td>";
+        			innerText += "<td align='center'>" + obj.students[i].STUDENT_ID + "</td>";
+        			innerText += "<td align='center'>" + obj.students[i].STUDENT_GENDER + "</td>";   			
+        			innerText += "<td align='center'>" + obj.students[i].TEST_SCORE + "</td>";
+        			if(obj.students[i].IS_PASS==1) { innerText += "<td align='center'><img src='images/ico-check.png' width='17' height='16' /></td>";}
+        			else { innerText += "<td align='center'><img src='images/ico-delete.png' width='15' height='15' /></td>";}
+        			innerText += "<td align='center'>" + obj.students[i].T_TEST_DATE + "</td>";  
+        			innerText += "<td align='center'>" + obj.students[i].TEST_TAKEN_TIME  + "</td>"; 
+	        		innerText += "<td></td></TR>";
+	        	}
+	 	       
+	        	innerText += "</TABLE>";
+				
+	        	document.getElementById("listShow").innerHTML = innerText;
+	        } else {
+	            alert("There was a problem in the returned data-:\n"+ requestObject.status.toString());
+	        }
+	    }
+	}
+	
+</script>
+
+
+</head>
+
+
+<body onLoad="onPageLoad()">
+<header class="header_vip">
+<ul class="menu_top">
+  <li><a href="./ViewAllStudentResult.html" title="Examination Application">Examination Application</a></li>
+  <li><a href="./ViewAllStudentResult.html" title="View All Student Result">View All Student Result</a></li>
+</ul>
+<div class="clear"></div>
+<h4><img src="images/logo.jpg" width="260" height="68"  alt="logo"></h4>
+<div class="user_top">
+  <label>Hi, Dr !</label>
+  <span><a href="./ViewAllStudentResult.html" title="u"><label id="lblUserName"></label></a></span>
+  <p><a href="./Login.html" title="S">Sign Out</a></p>
+</div>
+<div class="clear"></div>
+<ul class="menu_main">
+  <li><a class="icon-home" href="#" title="Home Page">Home Page</a></li>
+  <li class="active"><a href="./ViewAllStudentResult.html" title="View All Student Result">View All Student Result</a></li>
+  <li><a href="./ViewStudentResultByScore.html" title="View Score grade">View Score grade</a></li>
+  <li><a href="./ViewScoreStats.html" title="View Score Statistics">View Score Statistics</a></li>
+</ul>
+</header>
+<section class="content_vip">
+<div class="content_page">
+  <h2>Exam Result</h2>
+  <ul>
+    <li><a href="#" title="Print"><img src="images/ico-print.png" width="29" height="28" alt="Print"></a></li>
+    <li><a href="#" title="Excel"><img src="images/ico-excel.png" width="29" height="29" alt="Excel"></a></li>
+    <li><a href="#" title="PDF"><img src="images/ico-pdf.png" width="24" height="28" alt="PDF"></a></li>
+  </ul>
+  <div class="clear"></div>
+  <div class="list_ds">
+    <div class="line_ds"></div>
+    <div class="clear"></div>
+    <p class="name_list">View All Student Result</p>
+    <div class="clear"></div>
+    <div class="soft_ds">
+      <ul>
+        <li>Test Date</li>
+        <li>
+          <input class="floatL style_input" id="txtTestDate" type="text" />
+        <!--   <img class="img_day" class="floatL" src="images/ico-calenday.png" alt="" width="23" height="20" /></li>   -->
+        <li>Course</li>
+        <li>
+          <select class="style_input" id="drlCourseList">
+            <option>All</option>
+          </select>
+        </li>
+        <li>
+          <input class="floatL style_input width_200" id="txtCourseLikeSearch" type="text" />
+        </li>
+        <li>
+          <div class="ico_search_ds" onclick="doSearchClick()">Search</div>
+        </li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+    <div class="list_show" id="listShow">
+       Have no user data
+      <div class="clear"></div>
+      <div class="phan_trang">
+        <p class="floatR"> <img class="btn_go floatR" src="images/ico-go.png" alt="" width="20" height="20" />
+          <input class="style_input2 floatR" name="" type="text" />
+        </p>
+        <ul class="phantrang_bottom">
+          <li><a title="" href="#">&gt; Next</a></li>
+          <li><a title="" href="#">5</a></li>
+          <li><a title="" href="#">4</a></li>
+          <li class="active">3</li>
+          <li><a title="" href="#">2</a></li>
+          <li><a title="" href="#">1</a></li>
+          <li><a title="" href="#">Prev &lt;</a></li>
+        </ul>
+        <div>[1–9 of 90] </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<div class="clear"></div>
+</section>
+<footer class="footer_vip"> </footer>
+</body>
+</html>

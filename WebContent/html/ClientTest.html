@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>HTML</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<script>
+	
+	function readCookie(name) {
+		//alert(name);
+	    var i, c, ca, nameEQ = name + "=";
+	    ca = document.cookie.split(';');
+	    for(i=0;i < ca.length;i++) {
+	        c = ca[i];
+	        while (c.charAt(0)==' ') {
+	            c = c.substring(1,c.length);
+	        }
+	        if (c.indexOf(nameEQ) == 0) {
+	            return c.substring(nameEQ.length,c.length);
+	        }
+	    }
+	    return '';
+	}
+	var requestObject;
+	
+	function onPageLoad(){		
+		//1. Prepare the input data
+	   var LecturerID =  readCookie("LecturerID");
+	    alert(LecturerID);
+	    var studentID =  readCookie("StudentID");
+	    alert(studentID);
+		//2. obtain new object
+		if(window.XMLHttpRequest){
+			//Workable with: IE7+, Firefox, Chrome, Opera, Safari
+			requestObject = new XMLHttpRequest();
+		}
+		else{
+			//Workable with: IE5, IE6
+			requestObject = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	
+	    //3. set the callback function
+	    // the callback will be called when the result is available
+	    requestObject.onreadystatechange = processResult;
+	    
+	    //4. Specify the service which will be called   
+   		 var url = "./rest/ViewScoreStats/getChartData/" + LecturerID ;
+	    alert(url);
+	 
+	    //5. Send the request to server
+	    requestObject.open("GET", url, true); //true = Working in ASYNC mode
+	    requestObject.send(null);
+	    
+	    
+	}
+	
+	function processResult(){	
+	//	alert("a");
+		if (requestObject.readyState == 4) {
+	        if (requestObject.status == 200) { // 200 means "OK"
+	            //the result, we know before as text -  use requestObject.responseText
+	            alert(requestObject.responseText);      	
+	        	 
+	        	var obj = eval ("(" + requestObject.responseText + ")");	        	 
+	        		        		        	
+	        } else {
+	            alert("There was a problem in the returned data-:\n"+ requestObject.status.toString());
+	        }
+	    }
+	}
+</script>
+</head>
+
+<body onLoad="onPageLoad()">
+
+<img src="http://payload49.cargocollective.com/1/6/216617/3286203/prt_832x758_1369069147.jpg " alt="Client Test Page">
+
+
+</body>
+</html>

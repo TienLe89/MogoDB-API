@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<!-----Meta----->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Login Page</title>
+    <meta name="description" content="Login Page" />
+   
+<!--Stylesheets-->
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/dzyngiri.css" rel="stylesheet" type="text/css"/>
+<link href="fonts/pacifico/stylesheet.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="jquery.js"></script>
+
+<!--Sliding icons-->
+<script type="text/javascript">
+$(document).ready(function() {
+	$(".username").focus(function() {
+		$(".user-icon").css("left","-48px");
+	});
+	$(".username").blur(function() {
+		$(".user-icon").css("left","0px");
+	});
+	
+});
+</script>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script>
+	function writeCookie(name,value,days) {
+	    var date, expires;
+	    if (days) {
+	        date = new Date();
+	        date.setTime(date.getTime()+(days*24*60*60*1000));
+	        expires = "; expires=" + date.toGMTString();
+	            }else{
+	        expires = "";
+	    }
+	    document.cookie = name + "=" + value + expires + "; path=/";
+	 //   alert(document.cookie)
+	}
+//	writeCookie("StudentID","mitm703","1")
+//	writeCookie("LecturerID","t09","1")
+	var requestObject;
+	var UserID;
+	function onLogin()
+	{
+		
+	//	alert(document.getElementById("txtUserName").value);
+		//1. Prepare the input data
+	    UserID =  document.getElementById("txtUserName").value;
+	    if (UserID=="") UserID ="-";
+		//2. obtain new object
+		if(window.XMLHttpRequest){
+			//Workable with: IE7+, Firefox, Chrome, Opera, Safari
+			requestObject = new XMLHttpRequest();
+		}
+		else{
+			//Workable with: IE5, IE6
+			requestObject = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	
+	    //3. set the callback function
+	    // the callback will be called when the result is available
+	    requestObject.onreadystatechange = processResult;
+	    
+	    //4. Specify the service which will be called   
+	    var url = "./rest/Login/getname/" + UserID+"/"+document.getElementById("drlRoleID").value ;
+	   
+	    alert(url);
+	    //5. Send the request to server
+	    requestObject.open("GET", url, true); //true = Working in ASYNC mode
+	    requestObject.send(null);
+	}
+		
+	function processResult(){		
+		if (requestObject.readyState == 4) {
+	        if (requestObject.status == 200) { // 200 means "OK"
+	            //the result, we know before as text -  use requestObject.responseText
+	        	var obj;
+	            try{
+	        	var obj = eval ("(" + requestObject.responseText + ")");
+	        	}
+	        	catch(e)
+	        		{
+	        			alert("Invalid User");
+	        		}
+	        	if(obj!=null)
+	        	{
+		        	if(document.getElementById("drlRoleID").value==0)
+		        		{
+		        			writeCookie("StudentID",UserID,"1");
+		        			writeCookie("StudentName",obj.STUDENT_NAME,"1")
+		        		}
+		        	else
+		        		{
+			        		writeCookie("LecturerID",UserID,"1")
+			        		writeCookie("LecturerName",obj.LECTURER_NAME,"1")
+		        		}
+	        	}
+//	        	aler(obj.length);
+	        	//writeCookie("StudentID","mitm703","1")
+	        	//writeCookie("LecturerID","t09","1")   	
+	           	
+	        	
+	        } else {
+	            alert("There was a problem in the returned data-:\n"+ requestObject.status.toString());
+	        }
+	    }
+	}
+</script>
+
+</head>
+<body>
+
+    
+<div id="wrapper">
+	<!--Sliding icons-->
+    <div class="user-icon"></div>
+    <div class="user-icon"></div>
+    <!--END Sliding icons-->
+
+<!--login form inputs-->
+<form name="login-form" class="login-form" action="" method="post">
+
+	<!--Header-->
+    <div class="header">
+    <h1>Login Form</h1>
+    <span>Please login First!</span>
+    </div>
+    <!--END header-->
+	
+	<!--Input fields-->
+    <div class="content">
+  <select id="drlRoleID" class="input password" name="role">
+               <option value="0">Student</option>
+               <option value="1">Lecturer</option>                  
+   </select>   
+                        
+   <!--USERNAME--><input id="txtUserName" name="username" type="text" class="input username" /><!--END USERNAME-->            
+                   
+    </div>
+    <!--END Input fields-->
+    
+    <!--Buttons-->
+    <div class="footer">
+    <!--Login button <input type="submit" name="submit" value="Login" class="button" onclick="onLogin();"/> END Login button-->
+    <div class="ico_search_ds" onclick="onLogin()">Login</div>    
+    </div>
+    <!--END Buttons-->
+
+</form>
+<!--end login form-->
+
+</div>
+
+<!--bg gradient--><div class="gradient"></div><!--END bg gradient-->
+
+<!-- dzyngiri bottom bar (Only for demo) -->
+    <div class="dzyngiri-bottom">  
+    <h3 style="color:white; text-align:center;width:100%">@</h3>
+    </div>
+<!--/ dzyngiri bottom bar -->
+
+</body>
+</html>

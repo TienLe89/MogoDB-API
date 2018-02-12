@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>HTML</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css" />
+
+
+
+<script>
+
+	
+	function readCookie(name) {
+		//alert(name);
+	    var i, c, ca, nameEQ = name + "=";
+	    ca = document.cookie.split(';');
+	    for(i=0;i < ca.length;i++) {
+	        c = ca[i];
+	        while (c.charAt(0)==' ') {
+	            c = c.substring(1,c.length);
+	        }
+	        if (c.indexOf(nameEQ) == 0) {
+	            return c.substring(nameEQ.length,c.length);
+	        }
+	    }
+	    return '';
+	}
+	var requestObject;
+	function onPageLoad(){	
+		
+		
+		//1. Prepare the input data
+	    var studentID =  readCookie("StudentID");
+	    document.getElementById("lblUserName").innerHTML = readCookie("StudentName");
+		//2. obtain new object
+		if(window.XMLHttpRequest){
+			//Workable with: IE7+, Firefox, Chrome, Opera, Safari
+			requestObject = new XMLHttpRequest();
+		}
+		else{
+			//Workable with: IE5, IE6
+			requestObject = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	
+	    //3. set the callback function
+	    // the callback will be called when the result is available
+	    requestObject.onreadystatechange = processResult;
+	    
+	    //4. Specify the service which will be called   
+	    var url = "./rest/PersonalStats/getname/" + studentID ;
+	 
+	    //5. Send the request to server
+	    requestObject.open("GET", url, true); //true = Working in ASYNC mode
+	    requestObject.send(null);
+	    
+	    
+	}
+	
+	function processResult(){		
+		if (requestObject.readyState == 4) {
+	        if (requestObject.status == 200) { // 200 means "OK"
+	            //the result, we know before as text -  use requestObject.responseText
+	        	 
+	        	var obj = eval ("(" + requestObject.responseText + ")");	
+		       	document.getElementById("lblPassCourses").innerHTML = obj.NO_PASS_COURSE;
+	        	document.getElementById("lblFailCourses").innerHTML = obj.NO_FAIL_COURSE;
+	        	document.getElementById("lblPendingCourses").innerHTML = obj.NO_PENDING_COURSE;
+	        	document.getElementById("lblAvgPerformance").innerHTML = obj.AvgPerformance;
+	        	document.getElementById("minScore").innerHTML = obj.MinPerformance;
+	        	document.getElementById("maxScore").innerHTML = obj.MaxPerformance;
+	        	
+	        	document.getElementById("NoOf1Test").innerHTML = obj.NoOf1Test;
+	        	document.getElementById("NoOf2Test").innerHTML = obj.NoOf2Test;
+	        	document.getElementById("NoOfMore2Test").innerHTML = obj.NoOfMore2Test;
+	        	
+	        	
+	        	
+	        } else {
+	            alert("There was a problem in the returned data-:\n"+ requestObject.status.toString());
+	        }
+	    }
+	}
+</script>
+</head>
+
+<body onLoad="onPageLoad()">
+<header class="header_vip">
+<ul class="menu_top">
+  <li><a href="./PersonalStas.html" title="Examination Application">Examination Application</a></li>
+  <li><a href="./PersonalStas.html" title="Personal Stats">Exam Result</a></li>
+</ul>
+<div class="clear"></div>
+<h4><img src="images/logo.jpg" width="260" height="68"  alt="logo"></h4>
+<div class="user_top">
+  <label>Hi !</label>
+  <span><a href="./PersonalStas.html" title="u"><label id="lblUserName"></label></a></span>
+  <p><a href="./Login.html" title="S">Sign Out</a></p>
+</div>
+<div class="clear"></div>
+<ul class="menu_main">
+  <li><a class="icon-home" href="#" title="Home Page">Home Page</a></li>
+  <li class="active"><a href="./PersonalStas.html" title="Personal Stats">Personal Stats</a></li>
+  <li ><a href="./StudentExamResult.html" title="Exam Result">Exam Result</a></li>
+</ul>
+</header>
+<section class="content_vip">
+<div class="content_page1">
+  <h2>Personal Stats</h2>
+  <div class="border-red"> <span>Current Average Performance :
+    <label id="lblAvgPerformance"></label>
+    </span>
+    <ul>
+      <li><a href="#" title="Print"><img src="images/ico-print.png" width="29" height="28" alt="Print"></a></li>
+      <li><a href="#" title="Excel"><img src="images/ico-excel.png" width="29" height="29" alt="Excel"></a></li>
+      <li><a href="#" title="PDF"><img src="images/ico-pdf.png" width="24" height="28" alt="PDF"></a></li>
+    </ul>
+    <div class="clear"></div>
+  </div>
+  <div class="clear"></div>
+  <div class="content_left">
+    <h3>Reference Number</h3>
+    <ul>
+      <li>No Pending courses:
+        <label id="lblPendingCourses"></label>
+      </li>
+      <li>
+        <p> <span class="passed"></span> </p>
+      </li>
+      <li>No course passed :
+        <label id="lblPassCourses"></label>
+      </li>
+      <li>
+        <p> <span class="pending"></span> </p>
+      </li>
+      <li>No courses failed :
+        <label id="lblFailCourses"></label>
+      </li>
+      <li>
+        <p> <span class="failed"></span> </p>
+      </li>
+    </ul>
+  </div>
+  <div class="content_right">
+    <table class="course_statistics" width="100%" border="0" cellspacing="1" cellpadding="1">
+      <tr>
+        <td align="left">Course statistics</td>
+        
+      </tr>
+      <tr>
+        <td align="left">Max Score : <b class="clor-blue" id="maxScore"></b></td>
+        
+      </tr>
+      <tr>
+        <td align="left">Min Score : <b class="clor-red" id="minScore"></b></td>
+        
+      </tr>
+      <tr>
+        <td align="left">Minimum Passed : <b class="clor-blue" id="maxScore">50</b></td>
+              </tr>
+    </table>
+    <div class="clear height14"></div>
+    <table class="course_statistics" width="100%" border="0" cellspacing="1" cellpadding="1">
+      <tr>
+        <td>Re-Test course statistics </td>
+        <td>No of courses</td>
+      </tr>
+      <tr>
+        <td>No of course Test 1 times</td>
+        <td id="NoOf1Test"></td>
+      </tr>
+      <tr>
+        <td>No of course Re-Test 2  times </td>
+        <td id="NoOf2Test"></td>
+      </tr>
+      <tr>
+        <td>No of course Re-Test  more than 2  times </td>
+        <td  id="NoOfMore2Test"></td>
+      </tr>
+    </table>
+    <div class="clear"></div>
+  </div>
+  <div class="clear"></div>
+</div>
+<div class="clear"></div>
+</section>
+<footer class="footer_vip"> </footer>
+</body>
+</html>
